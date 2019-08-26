@@ -1,18 +1,19 @@
-## Machine learning at Bolius
-This repo contains the documentation for the overall machine learning setup at Bolius. The repo is meant as a point of entry to understand the data, models,
-setup, etc.
+## Bolius Public notebooks
 
-### Sections
-The documentation has been split into the sections presented below.
+This repo is a collection of notebooks that showcases the computations and
+models behind different projects at Bolius.
 
-* **[Workflow](workflow.ipynb)**: The workflow for machine learning at Bolius.
-* **Raw Data**: Description of the raw data available and how to access it.
-* **Data Store**: Description of [Django ORM][ORM_URL].
-* **AI models**: How the AI models are stored and served.
-* **Servers and Setup**: An overview of the servers available and what software
-they are running.
+### Structure
 
+Each project has a folder which contains a notebook that serves as documentation
+for the models and computations for that specific project.
 
+The code is located in the same project folder as plain python files. This is
+done such that this repo can be used as a submodule.
 
+### Projects
 
-[ORM_URL]: https://github.com/Bolius/machine-learning-orm
+- **[water-comes][water_comes]**: This projects was about predicting the risk of
+  flooding and cloudbursts.
+
+[water_comes]: https://github.com/Bolius/notebooks/water_comes/Hollowings.ipynb
