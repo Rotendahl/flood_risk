@@ -1,4 +1,4 @@
-from pyproj import Proj, transform
+from pyproj import Transformer
 from PIL import Image
 from io import BytesIO
 import pandas as pd
@@ -14,11 +14,12 @@ def addressToLatLong(address):
         params={"q": address, "struktur": "mini"},
     )
     data = json.loads(response.content)[0]
-    return data["x"], data["y"]
+    return data["y"], data["x"]
 
 
 def convertEPSG(x, y):
-    return transform(Proj(init="epsg:4326"), Proj(init="epsg:3857"), x, y)
+    transformer = Transformer.from_crs("epsg:4326", "epsg:3857")
+    return transformer.transform(x, y)
 
 
 def boundingBox(x, y, boxSize=200):
@@ -30,10 +31,11 @@ def boundingBox(x, y, boxSize=200):
 
 
 def getImg(x, y, feature, mode="L", imageSize=800):
+    user, password = os.environ["KORTFORSYNINGEN"].split("@")
     params = {
         "service": "WMS",
-        "login": "rotendahl",
-        "password": os.environ["KORTFORSYNINGEN_KEY"],
+        "login": user,
+        "password": password,
         "TRANSPARENT": "True",
         "VERSION": "1.1.1",
         "REQUEST": "GetMap",
