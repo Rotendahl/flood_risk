@@ -16,4 +16,13 @@ done such that this repo can be used as a submodule.
 - **[water-comes][water_comes]**: This projects was about predicting the risk of
   flooding and cloudbursts.
 
+### Setup
+
+If you want to run the notebooks locally you must copy
+[.env.example][example_env] to the project root as `.env` and replace the values
+with valid ones.
+
+Dependencies are managed by [pipenv](https://github.com/pypa/pipenv).
+
 [water_comes]: https://github.com/Bolius/notebooks/water_comes/Hollowings.ipynb
+[example_env]: https://github.com/Bolius/notebooks/.env.example
