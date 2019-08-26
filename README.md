@@ -24,5 +24,5 @@ with valid ones.
 
 Dependencies are managed by [pipenv](https://github.com/pypa/pipenv).
 
-[water_comes]: https://github.com/Bolius/notebooks/water_comes/Hollowings.ipynb
-[example_env]: https://github.com/Bolius/notebooks/.env.example
+[water_comes]: https://github.com/Bolius/notebooks/blob/master/water_comes/Hollowings.ipynb
+[example_env]: https://github.com/Bolius/notebooks/blob/master/.env.example
