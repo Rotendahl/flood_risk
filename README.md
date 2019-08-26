@@ -16,4 +16,4 @@ done such that this repo can be used as a submodule.
 - **[water-comes][water_comes]**: This projects was about predicting the risk of
   flooding and cloudbursts.
 
-[water_comes]: https://github.com/Bolius/notebooks/water_comes/Hollowings.ipynb
+[water_comes]: https://github.com/Bolius/notebooks/blob/master/water_comes/Hollowings.ipynb
