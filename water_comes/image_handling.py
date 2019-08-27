@@ -31,11 +31,11 @@ def isolateBuilding(buildImg):
     return Image.fromarray(arr)
 
 
-def imageToBlackWhite(img, thresshold=255):
+def imageToBlackWhite(img, thresshold=255, retArray=False):
     df = pd.DataFrame(np.asarray(img).copy())
     df[df < thresshold] = 0
-    df[df > 0] = 255
-    return Image.fromarray(df.values).convert("1")
+    df[df > 0] = 255 if not retArray else 1
+    return Image.fromarray(df.values).convert("1") if not retArray else np.array(df)
 
 
 def combineImages(img1, img2):
