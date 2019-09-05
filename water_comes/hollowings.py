@@ -11,7 +11,7 @@ from io import BytesIO
 
 
 def addressToImages(address=None, x=None, y=None):
-    if address is None and (x is None or y in None):
+    if address is None and (x is None or y is None):
         raise ValueError("No input specified")
 
     if x is None or y is None:
@@ -80,7 +80,7 @@ def getHollowing(img, width=None):
 
 
 def getHollowingResponse(address=None, x=None, y=None):
-    if address is None and (x is None or y in None):
+    if address is None and (x is None or y is None):
         return
 
     if address is not None:
@@ -102,8 +102,8 @@ def getHollowingResponse(address=None, x=None, y=None):
     img.save(buffered, format="PNG")
 
     return {
-        "house_area_percentage": np.sum(np.bitwise_and(binBuild, binHollow))
+        "house_percentage": np.sum(np.bitwise_and(binBuild, binHollow))
         / np.sum(binBuild),
-        "area_amount": getHollowing(binHollow, 400),
+        "area_percentage": getHollowing(binHollow, 400),
         "image": base64.urlsafe_b64encode(buffered.getvalue()),
     }
