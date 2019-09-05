@@ -1,5 +1,5 @@
-from .data_retrival import addressToLatLong, convertEPSG, getImg
-from .image_handling import (
+from data_retrival import addressToLatLong, convertEPSG, getImg
+from image_handling import (
     combineImages,
     imageToBlackWhite,
     isolateBuilding,
@@ -16,7 +16,7 @@ def addressToImages(address=None, x=None, y=None):
 
     if x is None or y is None:
         x, y = addressToLatLong(address)
-        x, y = convertEPSG(x, y)
+    x, y = convertEPSG(x, y)
 
     # TODO run the three calls in parralel
     return (
@@ -102,8 +102,9 @@ def getHollowingResponse(address=None, x=None, y=None):
     img.save(buffered, format="PNG")
 
     return {
-        "house_percentage": np.sum(np.bitwise_and(binBuild, binHollow))
-        / np.sum(binBuild),
-        "area_percentage": getHollowing(binHollow, 400),
+        "house_percentage": round(
+            np.sum(np.bitwise_and(binBuild, binHollow)) / np.sum(binBuild) * 100, 2
+        ),
+        "area_percentage": round(getHollowing(binHollow, 400) * 100, 2),
         "image": base64.urlsafe_b64encode(buffered.getvalue()),
     }
