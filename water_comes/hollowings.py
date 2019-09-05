@@ -9,9 +9,11 @@ import numpy as np
 import base64
 from io import BytesIO
 
+
 def addressToImages(address=None, x=None, y=None):
     if address is None and (x is None or y in None):
-        return
+        raise ValueError("No input specified")
+
     if x is None or y is None:
         x, y = addressToLatLong(address)
         x, y = convertEPSG(x, y)
@@ -23,11 +25,13 @@ def addressToImages(address=None, x=None, y=None):
         getImg(x, y, "map", mode="RGB"),
     )
 
+
 def numberPixelHollowings(hollowImg, isolateImg):
     combined = combineImages(
         imageToBlackWhite(hollowImg, thresshold=10), imageToBlackWhite(isolateImg)
     )
     return np.asarray(imageToBlackWhite(combined)).sum()
+
 
 def prettyPng(mapImg, isolateImg, hollowImg, combined):
     houseImg = replaceColor(
@@ -50,6 +54,7 @@ def prettyPng(mapImg, isolateImg, hollowImg, combined):
     mapImg.paste(combined, (0, 0), combined)
     return mapImg
 
+
 def checkHollowing(address):
     buildImg, hollowImg, mapImg = addressToImages(address)
     isolateImg = isolateBuilding(buildImg)
@@ -60,17 +65,19 @@ def checkHollowing(address):
     img = prettyPng(mapImg, isolateImg, hollowImg, combined)
     return numberPixels, img
 
+
 def getHollowing(img, width=None):
     x, y = img.shape[:2]
     if width is None:
         width = min(x, y)
 
-    minx = int(x/2 - width/2)
-    maxx = int(x/2 + width/2)
-    miny = int(y/2 - width/2)
-    maxy = int(y/2 + width/2)
+    minx = int(x / 2 - width / 2)
+    maxx = int(x / 2 + width / 2)
+    miny = int(y / 2 - width / 2)
+    maxy = int(y / 2 + width / 2)
 
-    return np.sum(img[minx:maxx, miny:maxy])/((x-width)*(y-width))
+    return np.sum(img[minx:maxx, miny:maxy]) / ((x - width) * (y - width))
+
 
 def getHollowingResponse(address=None, x=None, y=None):
     if address is None and (x is None or y in None):
@@ -78,7 +85,8 @@ def getHollowingResponse(address=None, x=None, y=None):
 
     if address is not None:
         building, hollow, map = addressToImages(address)
-    else: building, hollow, map = addressToImages(x=x, y=y)
+    else:
+        building, hollow, map = addressToImages(x=x, y=y)
 
     isolateBuild = isolateBuilding(building)
 
@@ -91,10 +99,11 @@ def getHollowingResponse(address=None, x=None, y=None):
 
     img = prettyPng(map, isolateBuild, hollow, combined)
     buffered = BytesIO()
-    img.save(buffered, format="JPEG")
+    img.save(buffered, format="PNG")
 
-    return (
-        np.sum(np.bitwise_and(binBuild, binHollow))/np.sum(binBuild), #The percentage of the house area that has a hollowing
-        getHollowing(binHollow, 400), #The amount of the house area that has a hollowing
-        base64.urlsafe_b64encode(buffered.getvalue()) # A base64 encoded PNG that shows the house and hollowings
-    )
+    return {
+        "house_area_percentage": np.sum(np.bitwise_and(binBuild, binHollow))
+        / np.sum(binBuild),
+        "area_amount": getHollowing(binHollow, 400),
+        "image": base64.urlsafe_b64encode(buffered.getvalue()),
+    }
