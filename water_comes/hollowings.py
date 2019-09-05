@@ -1,5 +1,5 @@
-from water_comes.data_retrival import addressToLatLong, convertEPSG, getImg
-from water_comes.image_handling import (
+from .data_retrival import addressToLatLong, convertEPSG, getImg
+from .image_handling import (
     combineImages,
     imageToBlackWhite,
     isolateBuilding,
