@@ -12,6 +12,9 @@ pillow = "*"
 pandas = "*"
 requests = "*"
 jupyter-contrib-nbextensions = "*"
+numpy = "*"
+flake8 = "*"
+black = "==19.10b0"
 
 [requires]
 python_version = "3.7"

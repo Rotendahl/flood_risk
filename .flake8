@@ -1,0 +1,5 @@
+[flake8]
+# See http://flake8.pycqa.org/en/latest/user/options.html for a list of options
+ignore = E501, W503
+count = True
+statistics = True
