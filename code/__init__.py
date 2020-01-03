@@ -7,7 +7,10 @@ from .image_handling import (
 
 from .data_retrieval import address_to_lat_long, bounding_box, convert_espg, get_img
 
+from .hollowings import address_to_images
+
 __all__ = [
+    address_to_images,
     address_to_lat_long,
     bounding_box,
     combine_images,

@@ -41,10 +41,10 @@ class TestDataRetrieval(unittest.TestCase):
 
     def test_get_img_map(self):
         office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
-        actual_image = get_img(office_address, "map", mode="RGBA")
+        actual_image = get_img(office_address, "map", mode="RGB")
         expected_image = Image.open(
             path.join("tests", "test_images", "get_img_map.png")
-        ).convert("RGBA")
+        ).convert("RGB")
         self.assertEqual(actual_image, expected_image)
 
 
