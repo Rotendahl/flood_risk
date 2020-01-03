@@ -1,30 +1,30 @@
 from pyproj import Transformer
 from PIL import Image
 from io import BytesIO
-import pandas as pd
 import os
 import requests
-import json
 
 
-def addressToLatLong(address):
+def address_to_lat_long(address):
     response = requests.request(
         "GET",
-        "https://dawa.aws.dk/adgangsadresser",
-        params={"q": address, "struktur": "mini"},
+        "https://dawa.aws.dk/adresser",
+        params={"q": address, "struktur": "mini", "fuzzy": ""},
     )
-    data = json.loads(response.content)[0]
+    if response.status_code != 200:
+        raise ValueError(f"Invalid address: {address}")
+    data = response.json()[0]
     return data["y"], data["x"]
 
 
-def convertEPSG(x, y):
+def convert_espg(coordinates):
     transformer = Transformer.from_crs("epsg:4326", "epsg:3857")
+    (x, y) = coordinates
     return transformer.transform(x, y)
 
 
-def boundingBox(x, y, boxSize=200):
-    if x < 1000 or y < 1000:
-        x, y = convertEPSG(x, y)
+def bounding_box(coordinates, boxSize=200):
+    (x, y) = coordinates
     minx = x - boxSize / 2
     miny = y - boxSize / 2
     maxx = x + boxSize / 2
@@ -32,8 +32,11 @@ def boundingBox(x, y, boxSize=200):
     return f"{minx},{miny},{maxx},{maxy}"
 
 
-def getImg(x, y, feature, mode="L", imageSize=800):
+def get_img(coordinates, feature, mode="L", imageSize=800):
     user, password = os.environ["KORTFORSYNINGEN"].split("@")
+    x, y = coordinates
+    if x < 1000 or y < 1000:
+        coordinates = convert_espg(coordinates)
     params = {
         "service": "WMS",
         "login": user,
@@ -43,7 +46,7 @@ def getImg(x, y, feature, mode="L", imageSize=800):
         "REQUEST": "GetMap",
         "FORMAT": "image/png",
         "SRS": "EPSG:3857",
-        "BBOX": boundingBox(x, y),
+        "BBOX": bounding_box(coordinates),
         "WIDTH": str(imageSize),
         "HEIGHT": str(imageSize),
     }
