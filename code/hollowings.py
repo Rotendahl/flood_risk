@@ -1,16 +1,33 @@
-# import numpy as np
-# import base64
-# rom io import BytesIO
+import asyncio
+import numpy as np
+from PIL import Image
+from io import BytesIO
+import base64
 
-from code import (
+from .data_retrieval import (
     address_to_lat_long,
     convert_espg,
     get_img,
-    # combine_images,
-    # imageToBlackWhite,
-    # isolateBuilding,
-    # replaceColor,
 )
+
+from .image_handling import isolate_building
+
+
+from .config import HOLLOWING_COLOR, HOUSE_COLOR, OVERLAP_COLOR
+
+from .image_handling import greyscale_to_binary_image
+
+
+async def get_img_async(*args, **kwargs):
+    return get_img(*args, **kwargs)
+
+
+async def get_images_async(coordinates):
+    return asyncio.gather(
+        get_img_async(coordinates, "buildings"),
+        get_img_async(coordinates, "hollowings"),
+        get_img_async(coordinates, "map", mode="RGB"),
+    )
 
 
 def address_to_images(address=None, coordinates=None):
@@ -20,92 +37,46 @@ def address_to_images(address=None, coordinates=None):
     coordinates = address_to_lat_long(address) if coordinates is None else coordinates
     coordinates = convert_espg(coordinates)
 
-    return (
-        get_img(coordinates, "buildings"),
-        get_img(coordinates, "hollowings"),
-        get_img(coordinates, "map", mode="RGB"),
+    return asyncio.run(get_images_async(coordinates)).result()
+
+
+def house_percentage_hollowing(hollowingImg, buldingImg):
+    hollowingImg = np.asarray(greyscale_to_binary_image(hollowingImg, thresshold=10))
+    buldingImg = np.asarray(greyscale_to_binary_image(buldingImg, thresshold=10))
+
+    overlap = np.logical_and(hollowingImg, buldingImg).sum()
+    house_area = buldingImg.sum()
+    return overlap / house_area * 100
+
+
+def generate_image_summary(mapImg, buildingImg, hollowingImg):
+    (x, y) = mapImg.size
+    overlay = np.ndarray(shape=(x, y, 4), dtype=np.uint8)
+    hollowing_mask = np.asarray(greyscale_to_binary_image(hollowingImg, thresshold=10))
+    bulding_mask = np.asarray(greyscale_to_binary_image(buildingImg, thresshold=10))
+    overlap_mask = np.logical_and(hollowing_mask, bulding_mask)
+    overlay[:, :] = [np.uint8(n) for n in [0, 0, 0, 0]]
+    overlay[bulding_mask] = HOUSE_COLOR
+    overlay[hollowing_mask] = HOLLOWING_COLOR
+    overlay[overlap_mask] = OVERLAP_COLOR
+    overlay_image = Image.fromarray(overlay, mode="RGBA")
+    mapImg.paste(overlay_image, (0, 0), overlay_image)
+    return mapImg
+
+
+def get_hollowing_response(address=None, coordinates=None):
+    building, hollowing, map = address_to_images(
+        address=address, coordinates=coordinates
     )
+    building = isolate_building(building)
+    image_summary = generate_image_summary(map, building, hollowing)
 
+    final_image = BytesIO()
+    image_summary.save(final_image, format="PNG")
 
-# def numberPixelHollowings(hollowImg, isolateImg):
-#     combined = combineImages(
-#         imageToBlackWhite(hollowImg, thresshold=10), imageToBlackWhite(isolateImg)
-#     )
-#     return np.asarray(imageToBlackWhite(combined)).sum()
-#
-#
-# def prettyPng(mapImg, isolateImg, hollowImg, combined):
-#     houseImg = replaceColor(
-#         imageToBlackWhite(isolateImg).convert("RGBA"),
-#         (255, 255, 255, 255),
-#         (247, 114, 30, 128),
-#     )
-#     mapImg.paste(houseImg, (0, 0), houseImg)
-#     hollowImg = replaceColor(
-#         imageToBlackWhite(hollowImg, thresshold=10).convert("RGBA"),
-#         (255, 255, 255, 255),
-#         (1, 1, 128, 128),
-#     )
-#     combined = replaceColor(
-#         imageToBlackWhite(combined).convert("RGBA"),
-#         (255, 255, 255, 255),
-#         (1, 1, 255, 128),
-#     )
-#     mapImg.paste(hollowImg, (0, 0), hollowImg)
-#     mapImg.paste(combined, (0, 0), combined)
-#     return mapImg
-#
-#
-# def checkHollowing(address):
-#     buildImg, hollowImg, mapImg = addressToImages(address)
-#     isolateImg = isolateBuilding(buildImg)
-#     combined = combineImages(
-#         imageToBlackWhite(hollowImg, thresshold=10), imageToBlackWhite(isolateImg)
-#     )
-#     numberPixels = numberPixelHollowings(hollowImg, isolateImg)
-#     img = prettyPng(mapImg, isolateImg, hollowImg, combined)
-#     return numberPixels, img
-#
-#
-# def getHollowing(img):
-#     x, y = img.shape[:2]
-#     if width is None:
-#         width = min(x, y)
-#
-#     minx = int(x / 2 - width / 2)
-#     maxx = int(x / 2 + width / 2)
-#     miny = int(y / 2 - width / 2)
-#     maxy = int(y / 2 + width / 2)
-#
-#     return np.sum(img[minx:maxx, miny:maxy]) / ((x - width) * (y - width))
-#
-#
-# def getHollowingResponse(address=None, x=None, y=None):
-#     if address is None and (x is None or y is None):
-#         return
-#
-#     if address is not None:
-#         building, hollow, map = addressToImages(address)
-#     else:
-#         building, hollow, map = addressToImages(x=x, y=y)
-#
-#     isolateBuild = isolateBuilding(building)
-#
-#     binBuild = imageToBlackWhite(isolateBuild, retArray=True)
-#     binHollow = imageToBlackWhite(hollow, 10, True)
-#
-#     combined = combineImages(
-#         imageToBlackWhite(hollow, thresshold=10), imageToBlackWhite(isolateBuild)
-#     )
-#
-#     img = prettyPng(map, isolateBuild, hollow, combined)
-#     buffered = BytesIO()
-#     img.save(buffered, format="PNG")
-#
-#     return {
-#         "house_percentage": round(
-#             np.sum(np.bitwise_and(binBuild, binHollow)) / np.sum(binBuild) * 100, 2
-#         ),
-#         "area_percentage": round(getHollowing(binHollow, 400) * 100, 2),
-#         "image": base64.urlsafe_b64encode(buffered.getvalue()),
-#     }
+    hollowingMask = np.asarray(greyscale_to_binary_image(hollowing, thresshold=10))
+    return {
+        "house_percentage": round(house_percentage_hollowing(hollowing, building), 2),
+        "area_percentage": np.round(hollowingMask.sum() / hollowingMask.size * 100, 2),
+        "image": base64.b64encode(final_image.getvalue()),
+    }

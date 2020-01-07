@@ -7,7 +7,7 @@ from code import (
     isolate_building,
     greyscale_to_binary_image,
     combine_images,
-    replaceColor,
+    replace_color,
 )
 
 
@@ -24,10 +24,12 @@ class TestImageHandling(unittest.TestCase):
         actual_image = isolate_building(
             Image.open(path.join("tests", "test_images", "buildings.png"))
         )
+
         expected_image = Image.open(
             path.join("tests", "test_images", "isolated_building.png")
         ).convert("1")
-        self.assertAlmostEqual(actual_image, expected_image)
+
+        self.assertEqual(actual_image, expected_image)
 
     def test_combine_images(self):
         verticalImage = np.zeros((100, 100)).astype(np.uint8)
@@ -71,7 +73,7 @@ class TestImageHandling(unittest.TestCase):
         color_image[0:halfImageLength, 0:halfImageLength] = red
         color_image[halfImageLength:, 0:halfImageLength] = blue
         color_image[0:fullImageLength, halfImageLength:] = green
-        green_image = replaceColor(color_image, red, green)
+        green_image = replace_color(color_image, red, green)
         expected_image = np.ndarray(shape=(100, 100, 4), dtype=np.uint8)
         expected_image[:, :] = green
         expected_image[halfImageLength:, 0:halfImageLength] = blue

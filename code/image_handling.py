@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image
 
 
-def greyscale_to_binary_image(img, thresshold=254):
+def greyscale_to_binary_image(img, thresshold=127):
     return img.point(lambda p: 255 if p > np.uint8(thresshold) else 0).convert("1")
 
 
@@ -20,7 +20,7 @@ def isolate_building(buildImg):
         x, y = points.pop()
         arr[x][y] = np.uint8(255)
         _checkNeighbours(arr, x, y, points)
-    return greyscale_to_binary_image(Image.fromarray(arr))
+    return greyscale_to_binary_image(Image.fromarray(arr), thresshold=254)
 
 
 def _checkNeighbours(arr, x, y, points):
@@ -54,7 +54,7 @@ def combine_images(img1, img2):
     return Image.fromarray(combined_img, mode="L")
 
 
-def replaceColor(img, original, new):
+def replace_color(img, original, new):
     img = np.array(img)
     img[(img == original).all(axis=-1)] = new
     img[(img != new).all(axis=-1)] = (255, 0, 0, 0)
