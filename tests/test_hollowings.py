@@ -9,7 +9,7 @@ import numpy as np
 from code import (
     get_hollowing_img,
     coordinates_to_holllowing_images,
-    address_to_lat_long,
+    address_to_id_and_coordinates,
     generate_image_summary,
     get_hollowing_response,
     house_percentage_hollowing,
@@ -18,7 +18,9 @@ from code import (
 
 class TestHollowings(unittest.TestCase):
     def test_get_img_building(self):
-        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        _, office_address = address_to_id_and_coordinates(
+            "Jarmers Pl. 2, 1551 København"
+        )
         actual_image = get_hollowing_img(office_address, "buildings")
         expected_image = Image.open(
             path.join("tests", "test_images", "get_img_buildings.png")
@@ -26,7 +28,9 @@ class TestHollowings(unittest.TestCase):
         self.assertEqual(actual_image, expected_image)
 
     def test_get_img_hollowings(self):
-        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        _, office_address = address_to_id_and_coordinates(
+            "Jarmers Pl. 2, 1551 København"
+        )
         actual_image = get_hollowing_img(office_address, "hollowings")
         expected_image = Image.open(
             path.join("tests", "test_images", "get_img_hollowings.png")
@@ -34,7 +38,9 @@ class TestHollowings(unittest.TestCase):
         self.assertEqual(actual_image, expected_image)
 
     def test_get_img_buildings(self):
-        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        _, office_address = address_to_id_and_coordinates(
+            "Jarmers Pl. 2, 1551 København"
+        )
         actual_images = coordinates_to_holllowing_images(office_address)
         expected_images = [
             Image.open(
@@ -78,7 +84,9 @@ class TestHollowings(unittest.TestCase):
         self.assertEqual(actual_image, expected_image)
 
     def test_get_hollowing_response(self):
-        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        _, office_address = address_to_id_and_coordinates(
+            "Jarmers Pl. 2, 1551 København"
+        )
         resp = get_hollowing_response(office_address)
         actual_image = np.asarray(Image.open(BytesIO(base64.b64decode(resp["image"]))))
         expected_image = np.asarray(

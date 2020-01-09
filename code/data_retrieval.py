@@ -8,7 +8,7 @@ from PIL import Image
 from .config import IMAGE_SIZE
 
 
-def address_to_lat_long(address):
+def address_to_id_and_coordinates(address):
     response = requests.request(
         "GET",
         "https://dawa.aws.dk/adresser",
@@ -17,7 +17,20 @@ def address_to_lat_long(address):
     if response.status_code != 200:
         raise ValueError(f"Invalid address: {address}")
     data = response.json()[0]
-    return data["y"], data["x"]
+    return data["adgangsadresseid"], (data["y"], data["x"])
+
+
+def has_basement(address_id):
+    response = requests.request(
+        "GET",
+        "https://apps.conzoom.eu/api/v1/values/dk/unit/",
+        headers={"authorization": f"Basic {os.environ['GEO_KEY']}"},
+        params={"where": f"acadr_bbrid={address_id}", "vars": "bld_area_basement"},
+    )
+    if response.status_code != 200:
+        raise ValueError(f"Invalid address_id: {address_id}")
+    basement_size = response.json()["objects"][0]["values"]["bld_area_basement"]
+    return basement_size is not None and basement_size > 0
 
 
 def bounding_box(coordinates, ESPG=None, boxSize=200):

@@ -1,5 +1,6 @@
 from .data_retrieval import (
-    address_to_lat_long,
+    has_basement,
+    address_to_id_and_coordinates,
     bounding_box,
     get_satelite_img,
     get_satelite_img_async,
@@ -37,9 +38,10 @@ from .fastning import get_fastning_img, fastning_image_to_value, get_fastning_re
 
 
 __all__ = [
+    has_basement,
     coordinates_to_holllowing_images,
     get_storm_flod_response,
-    address_to_lat_long,
+    address_to_id_and_coordinates,
     bounding_box,
     CONDUCTIVITY_LIMITS,
     FASTNING_LIMITS,
@@ -56,6 +58,7 @@ __all__ = [
     get_hollowing_img,
     get_satelite_img,
     get_satelite_img_async,
+    get_storm_flood_img,
     greyscale_to_binary_image,
     HOLLOWING_COLOR,
     HOUSE_COLOR,

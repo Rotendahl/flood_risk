@@ -9,7 +9,7 @@ import numpy as np
 
 from code import (
     get_fastning_img,
-    address_to_lat_long,
+    address_to_id_and_coordinates,
     fastning_image_to_value,
     get_fastning_response,
 )
@@ -17,7 +17,9 @@ from code import (
 
 class TestFastning(unittest.TestCase):
     def test_get_fastning_img(self):
-        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        _, office_address = address_to_id_and_coordinates(
+            "Jarmers Pl. 2, 1551 København"
+        )
         actual_image = get_fastning_img(coordinates=office_address)
         expected_image = Image.open(
             path.join("tests", "test_images", "get_fastning_office.png")
@@ -26,14 +28,18 @@ class TestFastning(unittest.TestCase):
         self.assertEqual(actual_image, expected_image)
 
     def test_fastning_img_to_value(self):
-        office_address = address_to_lat_long("Kjærmarken 103, 6771 gredstedbro")
+        _, office_address = address_to_id_and_coordinates(
+            "Kjærmarken 103, 6771 gredstedbro"
+        )
         fastning_image = get_fastning_img(coordinates=office_address)
         fastning_image_to_value(fastning_image)
 
         self.assertEqual(fastning_image_to_value(fastning_image), 44.75)
 
     def test_get_conductivity_response(self):
-        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        _, office_address = address_to_id_and_coordinates(
+            "Jarmers Pl. 2, 1551 København"
+        )
         resp = get_fastning_response(office_address)
 
         self.assertEqual(resp["value"], 51.53)
