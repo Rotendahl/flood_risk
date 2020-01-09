@@ -31,11 +31,14 @@ from .conductivity import (
     get_conductivity_response,
 )
 
+from .storm_flood import get_storm_flood_img, get_storm_flod_response
+
 from .fastning import get_fastning_img, fastning_image_to_value, get_fastning_response
 
 
 __all__ = [
     coordinates_to_holllowing_images,
+    get_storm_flod_response,
     address_to_lat_long,
     bounding_box,
     CONDUCTIVITY_LIMITS,
