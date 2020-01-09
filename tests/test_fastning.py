@@ -36,7 +36,7 @@ class TestFastning(unittest.TestCase):
 
         self.assertEqual(fastning_image_to_value(fastning_image), 44.75)
 
-    def test_get_conductivity_response(self):
+    def test_get_conductivity_response_high(self):
         _, office_address = address_to_id_and_coordinates(
             "Jarmers Pl. 2, 1551 København"
         )
@@ -52,6 +52,15 @@ class TestFastning(unittest.TestCase):
             ).convert("RGB")
         )
         self.assertTrue(np.allclose(actual_image, expected_image, atol=1))
+
+    def test_get_conductivity_response_medium(self):
+        _, home_coordinates = address_to_id_and_coordinates(
+            "Kjærmarken 103, 6771 gredstedbro"
+        )
+        resp = get_fastning_response(home_coordinates)
+
+        self.assertEqual(resp["risk"], "medium")
+        self.assertEqual(resp["value"], 44.75)
 
 
 if __name__ == "__main__":
