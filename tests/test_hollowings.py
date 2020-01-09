@@ -8,7 +8,7 @@ import numpy as np
 
 from code import (
     get_hollowing_img,
-    address_to_holllowing_images,
+    coordinates_to_holllowing_images,
     address_to_lat_long,
     generate_image_summary,
     get_hollowing_response,
@@ -35,7 +35,7 @@ class TestHollowings(unittest.TestCase):
 
     def test_get_img_buildings(self):
         office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
-        actual_images = address_to_holllowing_images(coordinates=office_address)
+        actual_images = coordinates_to_holllowing_images(office_address)
         expected_images = [
             Image.open(
                 path.join("tests", "test_images", "get_img_buildings.png")
@@ -43,9 +43,6 @@ class TestHollowings(unittest.TestCase):
             Image.open(
                 path.join("tests", "test_images", "get_img_hollowings.png")
             ).convert("L"),
-            Image.open(path.join("tests", "test_images", "get_img_map.png")).convert(
-                "RGB"
-            ),
         ]
         self.assertEqual(actual_images, expected_images)
 
@@ -81,7 +78,8 @@ class TestHollowings(unittest.TestCase):
         self.assertEqual(actual_image, expected_image)
 
     def test_get_hollowing_response(self):
-        resp = get_hollowing_response("Jarmers Plads 2, 1551 København V")
+        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        resp = get_hollowing_response(office_address)
         actual_image = np.asarray(Image.open(BytesIO(base64.b64decode(resp["image"]))))
         expected_image = np.asarray(
             Image.open(

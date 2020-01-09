@@ -10,13 +10,15 @@ from .config import (
     OVERLAP_COLOR,
     IMAGE_SIZE,
     CONDUCTIVITY_LIMITS,
+    FASTNING_MAPPING,
+    FASTNING_LIMITS,
 )
 
 from .image_handling import combine_images, greyscale_to_binary_image, isolate_building
 
 
 from .hollowings import (
-    address_to_holllowing_images,
+    coordinates_to_holllowing_images,
     house_percentage_hollowing,
     generate_image_summary,
     get_hollowing_response,
@@ -29,16 +31,24 @@ from .conductivity import (
     get_conductivity_response,
 )
 
+from .fastning import get_fastning_img, fastning_image_to_value, get_fastning_response
+
+
 __all__ = [
-    address_to_holllowing_images,
+    coordinates_to_holllowing_images,
     address_to_lat_long,
     bounding_box,
     CONDUCTIVITY_LIMITS,
+    FASTNING_LIMITS,
     color_to_conductivity,
     combine_images,
+    fastning_image_to_value,
+    FASTNING_MAPPING,
     generate_image_summary,
     get_conductivity_img,
     get_conductivity_response,
+    get_fastning_img,
+    get_fastning_response,
     get_hollowing_response,
     get_hollowing_img,
     get_satelite_img,

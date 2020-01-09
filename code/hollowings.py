@@ -7,16 +7,12 @@ from PIL import Image
 from io import BytesIO
 
 from .data_retrieval import (
-    address_to_lat_long,
     bounding_box,
-    get_satelite_img_async,
+    get_satelite_img,
 )
 
-from .image_handling import isolate_building
-
-
 from .config import HOLLOWING_COLOR, HOUSE_COLOR, OVERLAP_COLOR, IMAGE_SIZE
-
+from .image_handling import isolate_building
 from .image_handling import greyscale_to_binary_image
 
 
@@ -59,14 +55,10 @@ async def get_images_async(coordinates):
     return asyncio.gather(
         get_hollowing_img_async(coordinates, "buildings"),
         get_hollowing_img_async(coordinates, "hollowings"),
-        get_satelite_img_async(coordinates),
     )
 
 
-def address_to_holllowing_images(address=None, coordinates=None):
-    if address is not None:
-        coordinates = address_to_lat_long(address)
-
+def coordinates_to_holllowing_images(coordinates):
     return asyncio.run(get_images_async(coordinates)).result()
 
 
@@ -94,12 +86,12 @@ def generate_image_summary(mapImg, buildingImg, hollowingImg):
     return mapImg
 
 
-def get_hollowing_response(address=None, coordinates=None):
-    building, hollowing, map = address_to_holllowing_images(
-        address=address, coordinates=coordinates
-    )
+def get_hollowing_response(coordinates, sateliteImage=None):
+    if sateliteImage is None:
+        sateliteImage = get_satelite_img(coordinates)
+    building, hollowing = coordinates_to_holllowing_images(coordinates)
     building = isolate_building(building)
-    image_summary = generate_image_summary(map, building, hollowing)
+    image_summary = generate_image_summary(sateliteImage, building, hollowing)
 
     final_image = BytesIO()
     image_summary.save(final_image, format="PNG")
