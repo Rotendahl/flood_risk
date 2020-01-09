@@ -52,10 +52,3 @@ def combine_images(img1, img2):
 
     combined_img = (img1 + img2).astype(np.uint8)
     return Image.fromarray(combined_img, mode="L")
-
-
-def replace_color(img, original, new):
-    img = np.array(img)
-    img[(img == original).all(axis=-1)] = new
-    img[(img != new).all(axis=-1)] = (255, 0, 0, 0)
-    return Image.fromarray(img, mode="RGBA")

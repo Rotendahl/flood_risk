@@ -3,12 +3,7 @@ from os import path
 from PIL import Image
 import numpy as np
 
-from code import (
-    isolate_building,
-    greyscale_to_binary_image,
-    combine_images,
-    replace_color,
-)
+from code import isolate_building, greyscale_to_binary_image, combine_images
 
 
 class TestImageHandling(unittest.TestCase):
@@ -62,22 +57,6 @@ class TestImageHandling(unittest.TestCase):
             ),
             msg="Lower left quardrant of image did not match",
         )
-
-    def test_replace_color(self):
-        color_image = np.ndarray(shape=(100, 100, 4), dtype=np.uint8)
-        halfImageLength = int(len(color_image) / 2)
-        fullImageLength = len(color_image)
-        red = (255, 0, 0, 255)
-        green = (0, 255, 0, 255)
-        blue = (0, 0, 255, 255)
-        color_image[0:halfImageLength, 0:halfImageLength] = red
-        color_image[halfImageLength:, 0:halfImageLength] = blue
-        color_image[0:fullImageLength, halfImageLength:] = green
-        green_image = replace_color(color_image, red, green)
-        expected_image = np.ndarray(shape=(100, 100, 4), dtype=np.uint8)
-        expected_image[:, :] = green
-        expected_image[halfImageLength:, 0:halfImageLength] = blue
-        self.assertTrue(np.array_equal(np.asarray(green_image), expected_image))
 
 
 if __name__ == "__main__":

@@ -7,7 +7,8 @@ from PIL import Image
 import numpy as np
 
 from code import (
-    address_to_images,
+    get_hollowing_img,
+    address_to_holllowing_images,
     address_to_lat_long,
     generate_image_summary,
     get_hollowing_response,
@@ -16,9 +17,25 @@ from code import (
 
 
 class TestHollowings(unittest.TestCase):
+    def test_get_img_building(self):
+        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        actual_image = get_hollowing_img(office_address, "buildings")
+        expected_image = Image.open(
+            path.join("tests", "test_images", "get_img_buildings.png")
+        ).convert("L")
+        self.assertEqual(actual_image, expected_image)
+
+    def test_get_img_hollowings(self):
+        office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
+        actual_image = get_hollowing_img(office_address, "hollowings")
+        expected_image = Image.open(
+            path.join("tests", "test_images", "get_img_hollowings.png")
+        ).convert("L")
+        self.assertEqual(actual_image, expected_image)
+
     def test_get_img_buildings(self):
         office_address = address_to_lat_long("Jarmers Pl. 2, 1551 København")
-        actual_images = address_to_images(coordinates=office_address)
+        actual_images = address_to_holllowing_images(coordinates=office_address)
         expected_images = [
             Image.open(
                 path.join("tests", "test_images", "get_img_buildings.png")

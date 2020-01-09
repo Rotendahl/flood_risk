@@ -1,8 +1,11 @@
+import requests
+import os
+
+from io import BytesIO
 from pyproj import Transformer
 from PIL import Image
-from io import BytesIO
-import os
-import requests
+
+from .config import IMAGE_SIZE
 
 
 def address_to_lat_long(address):
@@ -17,26 +20,27 @@ def address_to_lat_long(address):
     return data["y"], data["x"]
 
 
-def convert_espg(coordinates):
+def bounding_box(coordinates, ESPG=None, boxSize=200):
     transformer = Transformer.from_crs("epsg:4326", "epsg:3857")
     (x, y) = coordinates
-    return transformer.transform(x, y)
+    (x, y) = transformer.transform(x, y)
+    minX = x - boxSize / 2
+    minY = y - boxSize / 2
+    maxX = x + boxSize / 2
+    maxY = y + boxSize / 2
+    if ESPG == "3857":
+        return f"{minX},{minY},{maxX},{maxY}"
+    elif ESPG == "25832":
+        transformer = Transformer.from_crs("epsg:3857", f"epsg:{ESPG}")
+        minX, minY = transformer.transform(minX, minY)
+        maxX, maxY = transformer.transform(maxX, maxY)
+        return f"{minX},{minY},{maxX},{maxY}"
+    else:
+        raise ValueError("NO or invalid ESPG specified")
 
 
-def bounding_box(coordinates, boxSize=200):
-    (x, y) = coordinates
-    minx = x - boxSize / 2
-    miny = y - boxSize / 2
-    maxx = x + boxSize / 2
-    maxy = y + boxSize / 2
-    return f"{minx},{miny},{maxx},{maxy}"
-
-
-def get_img(coordinates, feature, mode="L", imageSize=800):
+def get_satelite_img(coordinates, imageSize=IMAGE_SIZE):
     user, password = os.environ["KORTFORSYNINGEN"].split("@")
-    x, y = coordinates
-    if x < 1000 or y < 1000:
-        coordinates = convert_espg(coordinates)
     params = {
         "service": "WMS",
         "login": user,
@@ -46,23 +50,16 @@ def get_img(coordinates, feature, mode="L", imageSize=800):
         "REQUEST": "GetMap",
         "FORMAT": "image/png",
         "SRS": "EPSG:3857",
-        "BBOX": bounding_box(coordinates),
+        "BBOX": bounding_box(coordinates, ESPG="3857"),
         "WIDTH": str(imageSize),
         "HEIGHT": str(imageSize),
+        "servicename": ("orto_foraar",),
+        "LAYERS": "orto_foraar",
     }
-    if feature == "buildings":
-        params["LAYERS"] = "BU.Building"
-        params["servicename"] = "building_inspire"
-
-    elif feature == "hollowings":
-        params["servicename"] = ("dhm",)
-        params["LAYERS"] = "dhm_bluespot_ekstremregn"
-        params["STYLES"] = "bluespot_ekstremregn_0_015"
-
-    elif feature == "map":
-        params["servicename"] = ("orto_foraar",)
-        params["LAYERS"] = "orto_foraar"
-
     response = requests.request("GET", "https://kortforsyningen.kms.dk/", params=params)
     img = Image.open(BytesIO(response.content))
-    return img.convert(mode)
+    return img.convert("RGB")
+
+
+async def get_satelite_img_async(*args, **kwargs):
+    return get_satelite_img(*args, **kwargs)
