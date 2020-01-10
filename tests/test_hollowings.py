@@ -6,7 +6,9 @@ from os import path
 from PIL import Image
 import numpy as np
 
+
 from code import (
+    IMAGE_SIZE,
     get_hollowing_img,
     coordinates_to_holllowing_images,
     address_to_id_and_coordinates,
@@ -22,9 +24,11 @@ class TestHollowings(unittest.TestCase):
             "Jarmers Pl. 2, 1551 København"
         )
         actual_image = get_hollowing_img(office_address, "buildings")
-        expected_image = Image.open(
-            path.join("tests", "test_images", "get_img_buildings.png")
-        ).convert("L")
+        expected_image = (
+            Image.open(
+                path.join("tests", "test_images", "get_img_buildings.png")
+            ).convert("L")
+        ).resize((IMAGE_SIZE, IMAGE_SIZE))
         self.assertEqual(actual_image, expected_image)
 
     def test_get_img_hollowings(self):

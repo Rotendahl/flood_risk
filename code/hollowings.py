@@ -59,7 +59,10 @@ async def get_images_async(coordinates):
 
 
 def coordinates_to_holllowing_images(coordinates):
-    return asyncio.run(get_images_async(coordinates)).result()
+    return [
+        get_hollowing_img(coordinates, "buildings"),
+        get_hollowing_img(coordinates, "hollowings"),
+    ]
 
 
 def house_percentage_hollowing(hollowingImg, buldingImg):

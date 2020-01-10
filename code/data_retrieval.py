@@ -20,7 +20,7 @@ def address_to_id_and_coordinates(address):
     return data["adgangsadresseid"], (data["y"], data["x"])
 
 
-def has_basement(address_id):
+def get_basement_response(address_id):
     response = requests.request(
         "GET",
         "https://apps.conzoom.eu/api/v1/values/dk/unit/",
@@ -30,7 +30,9 @@ def has_basement(address_id):
     if response.status_code != 200:
         raise ValueError(f"Invalid address_id: {address_id}")
     basement_size = response.json()["objects"][0]["values"]["bld_area_basement"]
-    return basement_size is not None and basement_size > 0
+    return {
+        "risk": "high" if basement_size is not None and basement_size > 0 else "low"
+    }
 
 
 def bounding_box(coordinates, ESPG=None, boxSize=200):

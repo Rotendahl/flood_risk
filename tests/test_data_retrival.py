@@ -6,7 +6,7 @@ from code import (
     address_to_id_and_coordinates,
     bounding_box,
     get_satelite_img,
-    has_basement,
+    get_basement_response,
 )
 
 
@@ -35,8 +35,8 @@ class TestDataRetrieval(unittest.TestCase):
             "Kjærmarken 103, 6771 gredstedbro"
         )
         basement_id, _ = address_to_id_and_coordinates("Kiærsvej 2, 6760 Ribe")
-        self.assertFalse(has_basement(no_basement_id))
-        self.assertTrue(has_basement(basement_id))
+        self.assertEqual(get_basement_response(no_basement_id)["risk"], "low")
+        self.assertEqual(get_basement_response(basement_id)["risk"], "high")
 
     def test_bounding_box_espg_25832(self):
         _, coordinates = address_to_id_and_coordinates(

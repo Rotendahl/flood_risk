@@ -3,6 +3,7 @@ import unittest
 from PIL import Image
 from os import path
 
+
 from code import (
     get_storm_flood_img,
     address_to_id_and_coordinates,
@@ -10,7 +11,7 @@ from code import (
 )
 
 
-class TestFastning(unittest.TestCase):
+class TestStormFlood(unittest.TestCase):
     def test_get_flood_img(self):
         _, blox_coordinates = address_to_id_and_coordinates(
             "Bryghusgade, 1473 København"
