@@ -1,12 +1,10 @@
 import asyncio
-import nest_asyncio
 
 from .data_retrieval import get_basement_response, get_satelite_img
 from .fastning import get_fastning_response
 from .hollowings import get_hollowing_response
 from .conductivity import get_conductivity_response
 
-nest_asyncio.apply()
 
 # Async wrappers
 async def get_satelite_img_async(coordinates):
