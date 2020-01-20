@@ -1,12 +1,15 @@
 import numpy as np
 import pandas as pd
+import sys
+import os
 
 # A file with the constants such as colors etc. # Config vars below
-
 HOLLOWING_COLOR = [np.uint8(n) for n in [1, 1, 128, 70]]
 HOUSE_COLOR = [np.uint8(n) for n in [247, 114, 30, 128]]
 OVERLAP_COLOR = [np.uint8(n) for n in [1, 1, 200, 200]]
-IMAGE_SIZE = 800
+
+# Fixed size in testing
+IMAGE_SIZE = 800 if "unittest" in sys.argv[0] else int(os.environ["IMAGE_SIZE"])
 
 
 # These limits were set by the in house subjects experts at Bolius
