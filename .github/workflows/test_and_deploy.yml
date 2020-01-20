@@ -1,0 +1,31 @@
+name: Test & Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_SIZE: 800
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+            python-version: '3.7'
+      - name: Get packages
+        run: apt install pipenv && pipenv install --deploy
+        env:
+            KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
+            GEO_KEY: ${{ secrets.GEO_KEY }}
+      - name: Run tests
+        run: pipenv run python -m unittest
+      - name: Creating coverage
+        run: pipenv run coverage run --source=. -m unittest \
+            && coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      - name: Checking black
+        run: pipenv run black --check .
+      - name: Checking Flake8
+        run: pipenv run flake8 --max-complexity 8 .
