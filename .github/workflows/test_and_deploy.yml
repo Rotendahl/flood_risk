@@ -13,17 +13,22 @@ jobs:
       - uses: actions/setup-python@v1
         with:
             python-version: '3.7'
-      - name: Get packages
-        run: pip install --user pipenv && pipenv install --deploy
+      - name: Install pipenv
+        run: pip install --user pipenv
+      - name: Install packages
+        run: pipenv install --deploy
+      - name: Run tests
+        run: pipenv run python -m unittest
         env:
             KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
             GEO_KEY: ${{ secrets.GEO_KEY }}
-      - name: Run tests
-        run: pipenv run python -m unittest
+
       - name: Creating coverage
         run: pipenv run coverage run --source=. -m unittest \
             && coveralls
         env:
+          KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
+          GEO_KEY: ${{ secrets.GEO_KEY }}
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       - name: Checking black
         run: pipenv run black --check .
