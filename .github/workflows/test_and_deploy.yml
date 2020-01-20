@@ -14,7 +14,7 @@ jobs:
         with:
             python-version: '3.7'
       - name: Get packages
-        run: sudo apt-get install pipenv && pipenv install --deploy
+        run: pip install --user pipenv && pipenv install --deploy
         env:
             KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
             GEO_KEY: ${{ secrets.GEO_KEY }}
