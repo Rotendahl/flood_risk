@@ -24,12 +24,16 @@ jobs:
             GEO_KEY: ${{ secrets.GEO_KEY }}
 
       - name: Creating coverage
-        run: pipenv run coverage run --source=. -m unittest \
-            && coveralls
+        run: pipenv run coverage run --source=. -m unittest
         env:
           KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
           GEO_KEY: ${{ secrets.GEO_KEY }}
+
+      - name: Uploading Coverage
+        run: pipenv run coveralls
+        env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
       - name: Checking black
         run: pipenv run black --check .
       - name: Checking Flake8
