@@ -1,14 +1,12 @@
 import unittest
-
-from PIL import Image
-from os import path
-
-
-from code import (
-    get_storm_flood_img,
+from code.lib import (
     address_to_id_and_coordinates,
     get_storm_flod_response,
+    get_storm_flood_img,
 )
+from os import path
+
+from PIL import Image
 
 
 class TestStormFlood(unittest.TestCase):

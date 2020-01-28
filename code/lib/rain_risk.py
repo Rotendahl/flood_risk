@@ -1,9 +1,9 @@
 import asyncio
 
+from .conductivity import get_conductivity_response
 from .data_retrieval import get_basement_response, get_satelite_img
 from .fastning import get_fastning_response
 from .hollowings import get_hollowing_response
-from .conductivity import get_conductivity_response
 
 
 # Async wrappers

@@ -1,18 +1,16 @@
-import unittest
 import base64
-
-from PIL import Image
-from os import path
-from io import BytesIO
-
-import numpy as np
-
-from code import (
-    get_fastning_img,
+import unittest
+from code.lib import (
     address_to_id_and_coordinates,
     fastning_image_to_value,
+    get_fastning_img,
     get_fastning_response,
 )
+from io import BytesIO
+from os import path
+
+import numpy as np
+from PIL import Image
 
 
 class TestFastning(unittest.TestCase):

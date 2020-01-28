@@ -1,9 +1,10 @@
-import requests
 from io import BytesIO
-from PIL import Image
-import numpy as np
 
-from .config import IMAGE_SIZE, STORM_FLOODING_PERCENTAGE_LIMIT, STORM_FLOD_LIMITS
+import numpy as np
+import requests
+from PIL import Image
+
+from .config import IMAGE_SIZE, STORM_FLOD_LIMITS, STORM_FLOODING_PERCENTAGE_LIMIT
 from .data_retrieval import bounding_box
 
 

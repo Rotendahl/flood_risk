@@ -1,19 +1,15 @@
 import asyncio
-import requests
 import base64
 import os
-import numpy as np
-from PIL import Image
 from io import BytesIO
 
-from .data_retrieval import (
-    bounding_box,
-    get_satelite_img,
-)
+import numpy as np
+import requests
+from PIL import Image
 
-from .config import HOLLOWING_COLOR, HOUSE_COLOR, OVERLAP_COLOR, IMAGE_SIZE
-from .image_handling import isolate_building
-from .image_handling import greyscale_to_binary_image
+from .config import HOLLOWING_COLOR, HOUSE_COLOR, IMAGE_SIZE, OVERLAP_COLOR
+from .data_retrieval import bounding_box, get_satelite_img
+from .image_handling import greyscale_to_binary_image, isolate_building
 
 
 def get_hollowing_img(coordinates, feature, imageSize=IMAGE_SIZE):

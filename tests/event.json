@@ -1,0 +1,6 @@
+{
+  "httpMethod": "GET",
+  "queryStringParameters": {
+    "address": "Jarmers Pl. 2, 1551 København"
+  }
+}

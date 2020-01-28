@@ -1,13 +1,13 @@
 import unittest
-from PIL import Image
-from os import path
-
-from code import (
+from code.lib import (
     address_to_id_and_coordinates,
     bounding_box,
-    get_satelite_img,
     get_basement_response,
+    get_satelite_img,
 )
+from os import path
+
+from PIL import Image
 
 
 class TestDataRetrieval(unittest.TestCase):

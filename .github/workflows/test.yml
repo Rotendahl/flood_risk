@@ -1,4 +1,4 @@
-name: Test & Deploy
+name: Test
 
 on: [push]
 
@@ -12,16 +12,16 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
         with:
-            python-version: '3.7'
+          python-version: "3.8"
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
       - name: Install packages
-        run: pipenv install --deploy
+        run: pipenv install --deploy --dev
       - name: Run tests
         run: pipenv run python -m unittest
         env:
-            KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
-            GEO_KEY: ${{ secrets.GEO_KEY }}
+          KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
+          GEO_KEY: ${{ secrets.GEO_KEY }}
 
       - name: Creating coverage
         run: pipenv run coverage run --source=. -m unittest

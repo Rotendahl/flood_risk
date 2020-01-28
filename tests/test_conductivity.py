@@ -1,14 +1,13 @@
 import unittest
-
-from PIL import Image
-from os import path
-
-from code import (
+from code.lib import (
     address_to_id_and_coordinates,
-    get_conductivity_img,
     color_to_conductivity,
+    get_conductivity_img,
     get_conductivity_response,
 )
+from os import path
+
+from PIL import Image
 
 
 class TestConductivity(unittest.TestCase):

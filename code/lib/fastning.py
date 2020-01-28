@@ -1,17 +1,16 @@
-import requests
 import base64
-
-from io import BytesIO
-from PIL import Image
-import numpy as np
-
-from code import (
+from . import (
+    FASTNING_LIMITS,
+    FASTNING_MAPPING,
     IMAGE_SIZE,
     bounding_box,
-    FASTNING_MAPPING,
     get_satelite_img,
-    FASTNING_LIMITS,
 )
+from io import BytesIO
+
+import numpy as np
+import requests
+from PIL import Image
 
 
 def get_fastning_img(coordinates, imageSize=IMAGE_SIZE):

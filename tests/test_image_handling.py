@@ -1,9 +1,9 @@
 import unittest
+from code.lib import combine_images, greyscale_to_binary_image, isolate_building
 from os import path
-from PIL import Image
-import numpy as np
 
-from code import isolate_building, greyscale_to_binary_image, combine_images
+import numpy as np
+from PIL import Image
 
 
 class TestImageHandling(unittest.TestCase):

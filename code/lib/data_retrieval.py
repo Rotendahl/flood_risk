@@ -1,9 +1,9 @@
-import requests
 import os
-
 from io import BytesIO
-from pyproj import Transformer
+
+import requests
 from PIL import Image
+from pyproj import Transformer
 
 from .config import IMAGE_SIZE
 

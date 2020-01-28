@@ -1,11 +1,11 @@
-import requests
-
 from io import BytesIO
-from PIL import Image
-import numpy as np
 
+import numpy as np
+import requests
+from PIL import Image
+
+from .config import CONDUCTIVITY_LIMITS, CONDUCTIVITY_MAPPING
 from .data_retrieval import bounding_box
-from .config import CONDUCTIVITY_MAPPING, CONDUCTIVITY_LIMITS
 
 
 def get_conductivity_img(coordinates, imageSize=11):

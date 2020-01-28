@@ -1,21 +1,19 @@
 import base64
 import unittest
-
-from io import BytesIO
-from os import path
-from PIL import Image
-import numpy as np
-
-
-from code import (
+from code.lib import (
     IMAGE_SIZE,
-    get_hollowing_img,
-    coordinates_to_holllowing_images,
     address_to_id_and_coordinates,
+    coordinates_to_holllowing_images,
     generate_image_summary,
+    get_hollowing_img,
     get_hollowing_response,
     house_percentage_hollowing,
 )
+from io import BytesIO
+from os import path
+
+import numpy as np
+from PIL import Image
 
 
 class TestHollowings(unittest.TestCase):
