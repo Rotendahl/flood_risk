@@ -29,12 +29,13 @@ def get_flood_risk(address):
         response["rain_risk"]["factors"]["fastning"]["image"] = str(
             response["rain_risk"]["factors"]["fastning"]["image"]
         )
-        response = json.dumps(response)
-        flood_risk = response["flood_risk"]["risk"]
+        flood_risk = response["storm_flood"]["risk"]
         rain_risk = response["rain_risk"]["risk"]
         logger.info(f"Got {address}, with {rain_risk=} and {flood_risk=}")
+        response = json.dumps(response)
     except Exception as e:
         sentry_sdk.capture_exception(e)
+        logger.error(e)
     finally:
         return response
 
@@ -59,3 +60,6 @@ def lambda_handler(event, context):
             "headers": {"content-type": "application/json"},
             "body": response,
         }
+
+
+get_flood_risk("kjærmarken 103, 6771 gredstedbro")
