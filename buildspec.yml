@@ -6,7 +6,7 @@ phases:
   build:
     commands:
       - pip install -r requirements.txt
-      - export BUCKET=bolius-deployment-artifacts
+      - export BUCKET=bolious-bucket-test
       - aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
 artifacts:
   type: zip
