@@ -24,14 +24,13 @@ Resources:
           Properties:
             Path: /flood-risk
             Method: get
-
-Outputs:
-  FloodRiskAPI:
-    Description: "API Gateway endpoint URL for Prod stage for flood_risk"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/flood-risk/"
-  FloodRiskFunction:
-    Description: "flood_risk Lambda Function ARN"
-    Value: !GetAtt FloodRiskFunction.Arn
-  FlodRiskIAMRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt FloodRiskFunctionRole.Arn
+# Outputs:
+#   FloodRiskAPI:
+#     Description: "API Gateway endpoint URL for Prod stage for flood_risk"
+#     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/flood-risk/"
+#   FloodRiskFunction:
+#     Description: "flood_risk Lambda Function ARN"
+#     Value: !GetAtt FloodRiskFunction.Arn
+#   FlodRiskIAMRole:
+#     Description: "Implicit IAM Role created for Hello World function"
+#     Value: !GetAtt FloodRiskFunctionRole.Arn

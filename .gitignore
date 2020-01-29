@@ -4,4 +4,3 @@ __pycache__
 .coverage
 .env
 .aws-sam/build
-requirements.txt
