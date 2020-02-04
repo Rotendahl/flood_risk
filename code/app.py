@@ -3,10 +3,10 @@ import logging
 import sentry_sdk
 import os
 from lib import (
-    address_to_id_and_coordinates,
+    address_to_house_data,
+    bbr_id_to_house_data,
     get_rain_risk_response,
     get_storm_flod_response,
-    bbr_id_to_coordinates,
 )
 
 if "SENTRY_DSN" in os.environ.keys():
@@ -20,12 +20,17 @@ def get_flood_risk(address=None, bbr_id=None):
     response = None
     try:
         if bbr_id is None:
-            address_id, coordinates = address_to_id_and_coordinates(address)
+            house_data = address_to_house_data(address)
         else:
-            address_id, coordinates = bbr_id_to_coordinates(bbr_id)
+            house_data = bbr_id_to_house_data(bbr_id)
         response = {
-            "rain_risk": get_rain_risk_response(address_id, coordinates),
-            "storm_flood": get_storm_flod_response(coordinates),
+            "rain_risk": get_rain_risk_response(
+                house_data["id"], house_data["coordinates"]
+            ),
+            "storm_flood": get_storm_flod_response(house_data["coordinates"]),
+            "isAppartment": house_data["isAppartment"],
+            "id": house_data["id"],
+            "navn": house_data["navn"],
         }
         response["rain_risk"]["factors"]["hollowing"]["image"] = str(
             response["rain_risk"]["factors"]["hollowing"]["image"]
@@ -35,6 +40,7 @@ def get_flood_risk(address=None, bbr_id=None):
         )
         flood_risk = response["storm_flood"]["risk"]
         rain_risk = response["rain_risk"]["risk"]
+
         logger.info(f"Got {address}, with {rain_risk=} and {flood_risk=}")
         response = json.dumps(response)
     except Exception as e:

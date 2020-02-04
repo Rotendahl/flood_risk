@@ -1,6 +1,6 @@
 import unittest
 from code.lib import (
-    address_to_id_and_coordinates,
+    address_to_house_data,
     color_to_conductivity,
     get_conductivity_img,
     get_conductivity_response,
@@ -12,9 +12,9 @@ from PIL import Image
 
 class TestConductivity(unittest.TestCase):
     def test_get_conductivity_img(self):
-        _, office_address = address_to_id_and_coordinates(
-            "Jarmers Pl. 2, 1551 København"
-        )
+        office_address = address_to_house_data("Jarmers Pl. 2, 1551 København")[
+            "coordinates"
+        ]
         actual_image = get_conductivity_img(coordinates=office_address)
         expected_image = Image.open(
             path.join("tests", "test_images", "conductivity_img_office.png")
@@ -28,9 +28,9 @@ class TestConductivity(unittest.TestCase):
         self.assertEqual(color_to_conductivity([228, 124, 49]), 2400)
 
     def test_get_conductivity_response(self):
-        _, office_address = address_to_id_and_coordinates(
-            "Jarmers Pl. 2, 1551 København"
-        )
+        office_address = address_to_house_data("Jarmers Pl. 2, 1551 København")[
+            "coordinates"
+        ]
         resp = get_conductivity_response(office_address)
         self.assertEqual(resp["value"], 125)
         self.assertEqual(resp["risk"], "high")

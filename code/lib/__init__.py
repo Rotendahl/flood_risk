@@ -13,8 +13,8 @@ from .config import (
     OVERLAP_COLOR,
 )
 from .data_retrieval import (
-    address_to_id_and_coordinates,
-    bbr_id_to_coordinates,
+    address_to_house_data,
+    bbr_id_to_house_data,
     bounding_box,
     get_basement_response,
     get_satelite_img,
@@ -34,8 +34,8 @@ from .storm_flood import get_storm_flod_response, get_storm_flood_img
 
 
 __all__ = [
-    address_to_id_and_coordinates,
-    bbr_id_to_coordinates,
+    address_to_house_data,
+    bbr_id_to_house_data,
     bounding_box,
     color_to_conductivity,
     combine_images,
