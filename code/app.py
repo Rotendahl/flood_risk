@@ -51,6 +51,14 @@ def get_flood_risk(address=None, bbr_id=None):
 
 
 def lambda_handler(event, context):
+    headers = (
+        {
+            "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,GET",
+        },
+    )
     query_keys = (
         []
         if event["queryStringParameters"] is None
@@ -66,12 +74,16 @@ def lambda_handler(event, context):
         return {
             "statusCode": 400,
             "body": json.dumps({"message": "No Address or unadr_bbrid specified"}),
+            "headers": headers,
         }
     if response is None:
-        return {"statusCode": 500}
+        return {
+            "statusCode": 500,
+            "headers": headers,
+        }
     else:
         return {
             "statusCode": 200,
-            "headers": {"content-type": "application/json"},
+            "headers": headers,
             "body": response,
         }
