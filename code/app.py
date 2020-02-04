@@ -51,14 +51,12 @@ def get_flood_risk(address=None, bbr_id=None):
 
 
 def lambda_handler(event, context):
-    headers = (
-        {
-            "content-type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "OPTIONS,GET",
-        },
-    )
+    headers = {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "OPTIONS,GET",
+    }
     query_keys = (
         []
         if event["queryStringParameters"] is None
