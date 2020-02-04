@@ -5,6 +5,7 @@ phases:
       python: 3.8
   build:
     commands:
+      - pip install --upgrade pip
       - pip install pipenv
       - pipenv lock -r > requirements.txt
       - pip install -r requirements.txt -t code/
