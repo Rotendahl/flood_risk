@@ -1,6 +1,7 @@
 import unittest
 from code.lib import (
     address_to_id_and_coordinates,
+    bbr_id_to_coordinates,
     bounding_box,
     get_basement_response,
     get_satelite_img,
@@ -13,10 +14,12 @@ from PIL import Image
 class TestDataRetrieval(unittest.TestCase):
     def test_address_to_id_and_coordinates(self):
         id, coordinates = address_to_id_and_coordinates("Jarmers Pl. 2, 1551 København")
-        self.assertAlmostEqual(
-            coordinates, (55.67946496, 12.56466489),
-        )
+        self.assertEqual(coordinates, (55.67946496, 12.56466489))
         self.assertEqual(id, "0a3f507a-9dcc-32b8-e044-0003ba298018")
+
+    def test_bbr_id_to_coordinates(self):
+        id, coordinates = bbr_id_to_coordinates("40eb1f85-9c53-4581-e044-0003ba298018")
+        self.assertEqual(coordinates, (55.40156089, 8.74228813))
 
     def test_bounding_box_size(self):
         box = bounding_box((0, 0), boxSize=200, ESPG="3857")
