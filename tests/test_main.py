@@ -25,4 +25,3 @@ class TestRainRisk(unittest.TestCase):
 
         resp = lambda_handler(event, "")
         self.assertEqual(resp["statusCode"], 200)
-        self.fail("Finish test")
