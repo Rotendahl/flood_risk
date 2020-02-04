@@ -20,6 +20,16 @@ def address_to_id_and_coordinates(address):
     return data["adgangsadresseid"], (data["y"], data["x"])
 
 
+def bbr_id_to_coordinates(bbr_id):
+    response = requests.request(
+        "GET", f"https://dawa.aws.dk/adresser/{bbr_id}", params={"struktur": "mini"},
+    )
+    if response.status_code != 200:
+        raise ValueError(f"Invalid BBR_ID: {bbr_id}")
+    data = response.json()
+    return data["adgangsadresseid"], (data["y"], data["x"])
+
+
 def get_basement_response(address_id):
     response = requests.request(
         "GET",

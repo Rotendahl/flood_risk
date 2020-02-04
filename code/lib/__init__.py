@@ -14,6 +14,7 @@ from .config import (
 )
 from .data_retrieval import (
     address_to_id_and_coordinates,
+    bbr_id_to_coordinates,
     bounding_box,
     get_basement_response,
     get_satelite_img,
@@ -34,6 +35,7 @@ from .storm_flood import get_storm_flod_response, get_storm_flood_img
 
 __all__ = [
     address_to_id_and_coordinates,
+    bbr_id_to_coordinates,
     bounding_box,
     color_to_conductivity,
     combine_images,

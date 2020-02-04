@@ -73,16 +73,9 @@ pipenv shell from the project root.
 
 #### Deployment
 
-This project contains source code and supporting files for a serverless
-application that you can deploy with the SAM CLI.
-
--   code - Code for the application's Lambda function.
--   events - Invocation events that you can use to invoke the function.
--   tests - Unit tests for the application code.
--   template.yaml - A template that defines the application's AWS resources.
-
-Once a commit reaches the master branch a git hub actions builds the code in a
-container and deploys it to [AWS Lambda][lambda]
+The code on the master branch is automatically deployed to an AWS Lambda setup.
+The master branch has protection and requires the tests to pass before a merge
+is possible.
 
 * * *
 
@@ -112,7 +105,5 @@ presents this model as a webpage.
 [wms]: https://en.wikipedia.org/wiki/Web_Map_Service
 
 [espg]: https://epsg.io/3857
-
-[lambda]: https://aws.amazon.com/lambda/
 
 [pipenv]: https://github.com/pypa/pipenv

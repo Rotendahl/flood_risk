@@ -17,7 +17,7 @@ class TestRainRisk(unittest.TestCase):
         self.assertEqual(resp["rain_risk"]["risk"], "low")
         self.assertEqual(resp["storm_flood"]["risk"], "low")
 
-    def test_handler(self):
+    def test_handler_address(self):
         event = {
             "httpMethod": "GET",
             "queryStringParameters": {"address": "Jarmers Pl. 2, 1551 København"},
@@ -25,3 +25,15 @@ class TestRainRisk(unittest.TestCase):
 
         resp = lambda_handler(event, "")
         self.assertEqual(resp["statusCode"], 200)
+        self.assertEqual(json.loads(resp["body"])["rain_risk"]["risk"], "medium")
+
+    def test_handler_bbr_id(self):
+        event = {
+            "httpMethod": "GET",
+            "queryStringParameters": {
+                "unadr_bbrid": "40eb1f85-9c53-4581-e044-0003ba298018"
+            },
+        }
+        resp = lambda_handler(event, "")
+        self.assertEqual(resp["statusCode"], 200)
+        self.assertEqual(json.loads(resp["body"])["rain_risk"]["risk"], "low")
