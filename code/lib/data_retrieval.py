@@ -8,7 +8,7 @@ from pyproj import Transformer
 from .config import IMAGE_SIZE
 
 
-def address_to_id_and_coordinates(address):
+def address_to_house_data(address):
     response = requests.request(
         "GET",
         "https://dawa.aws.dk/adresser",
@@ -17,17 +17,27 @@ def address_to_id_and_coordinates(address):
     if response.status_code != 200:
         raise ValueError(f"Invalid address: {address}")
     data = response.json()[0]
-    return data["adgangsadresseid"], (data["y"], data["x"])
+    return {
+        "navn": data["betegnelse"],
+        "id": data["adgangsadresseid"],
+        "coordinates": (data["y"], data["x"]),
+        "isAppartment": not data["etage"] is None,
+    }
 
 
-def bbr_id_to_coordinates(bbr_id):
+def bbr_id_to_house_data(bbr_id):
     response = requests.request(
         "GET", f"https://dawa.aws.dk/adresser/{bbr_id}", params={"struktur": "mini"},
     )
     if response.status_code != 200:
         raise ValueError(f"Invalid BBR_ID: {bbr_id}")
     data = response.json()
-    return data["adgangsadresseid"], (data["y"], data["x"])
+    return {
+        "navn": data["betegnelse"],
+        "id": data["adgangsadresseid"],
+        "coordinates": (data["y"], data["x"]),
+        "isAppartment": not data["etage"] is None,
+    }
 
 
 def get_basement_response(address_id):

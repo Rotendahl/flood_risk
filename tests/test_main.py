@@ -25,7 +25,10 @@ class TestRainRisk(unittest.TestCase):
 
         resp = lambda_handler(event, "")
         self.assertEqual(resp["statusCode"], 200)
-        self.assertEqual(json.loads(resp["body"])["rain_risk"]["risk"], "medium")
+        data = json.loads(resp["body"])
+        self.assertEqual(data["rain_risk"]["risk"], "medium")
+        self.assertEqual(data["navn"], "Jarmers Plads 2, 1551 København V")
+        self.assertEqual(data["isAppartment"], False)
 
     def test_handler_bbr_id(self):
         event = {
@@ -36,4 +39,7 @@ class TestRainRisk(unittest.TestCase):
         }
         resp = lambda_handler(event, "")
         self.assertEqual(resp["statusCode"], 200)
-        self.assertEqual(json.loads(resp["body"])["rain_risk"]["risk"], "low")
+        data = json.loads(resp["body"])
+        self.assertEqual(data["rain_risk"]["risk"], "low")
+        self.assertEqual(data["navn"], "Kjærmarken 103, 6771 Gredstedbro")
+        self.assertEqual(data["isAppartment"], False)
