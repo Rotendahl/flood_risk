@@ -10,26 +10,27 @@ Flooding caused by excessive rain. (_Skybrud_ in danish). The
 risk here is a combination of the factors following factors (english/danish).
 To read more about a factor visit the linked notebook
 
-- **[(Hollowing/Lavning)][hollowingnotebook]:** A hollowing is a "hole" in the
-  ground where water will collect.
+-   **[(Hollowing/Lavning)][hollowingnotebook]:** A hollowing is a "hole" in the
+    ground where water will collect.
 
-- **[(Fastning/Befæstelsesgrad)][fastningnotebook]:** The amount of area
-  around the point that has buildings, roads or other surfaces the water can't
-  drain through.
+-   **[(Fastning/Befæstelsesgrad)][fastningnotebook]:** The amount of area
+    around the point that has buildings, roads or other surfaces the water can't
+    drain through.
 
-- **[(Conductivity/Hydraulisk ledeevne)][conductivitynotebook]:** The ground
-  type in the area.
+-   **[(Conductivity/Hydraulisk ledeevne)][conductivitynotebook]:** The ground
+    type in the area.
 
-* **Housing data:** The properties of the house located at the specified
-  point. For instance if the house has a basement it increases the risk of
-  flooding. The [danish building registry][bbr] provides the building data.
+
+-   **Housing data:** The properties of the house located at the specified
+    point. For instance if the house has a basement it increases the risk of
+    flooding. The [danish building registry][bbr] provides the building data.
 
 #### Storm flood
 
 Flooding caused by rising sea levels due to storm. This affects people who live
 close to the sea. The [flood notebook][floodnotebook] provides more detail
 
----
+* * *
 
 ### Technical documentation
 
@@ -39,10 +40,10 @@ The data is primarily given as images served by the [_Web Map Service_][wms]
 (WMS) protocol. As an example the flow for retrieving a hollowing image given
 the longitude latitude is as follows:
 
-- Convert the longitude and latitude to [The ESPG 3857 projection][espg]. This
-  projection uses meters as it's unit making computations easier.
-- Create a bounding box around the specified point
-- Request an image with the box at the projected point with.
+-   Convert the longitude and latitude to [The ESPG 3857 projection][espg]. This
+    projection uses meters as it's unit making computations easier.
+-   Create a bounding box around the specified point
+-   Request an image with the box at the projected point with.
 
 #### The modules
 
@@ -76,7 +77,7 @@ The code on the master branch is automatically deployed to an AWS Lambda setup.
 The master branch has protection and requires the tests to pass before a merge
 is possible.
 
----
+* * *
 
 #### Related projects
 
@@ -86,14 +87,23 @@ presents this model as a webpage.
 <!-- Links -->
 
 [kortforsyningen]: https://download.kortforsyningen.dk/content/geodataprodukter
+
 [miljoegis]: https://www.klimatilpasning.dk/kommuner/kortlaegning/data-til-kortlaegning/
+
 [hollowingnotebook]: ./notebooks/hollowing.ipynb
+
 [fastningnotebook]: ./notebooks/fastning.ipynb
+
 [conductivitynotebook]: ./notebooks/conductivity.ipynb
+
 [floodnotebook]: ./notebooks/flood.ipynb
+
 [rainnotebook]: ./notebooks/rain.ipynb
+
 [bbr]: https://bbr.dk/forside
+
 [wms]: https://en.wikipedia.org/wiki/Web_Map_Service
+
 [espg]: https://epsg.io/3857
-[lambda]: https://aws.amazon.com/lambda/
+
 [pipenv]: https://github.com/pypa/pipenv
