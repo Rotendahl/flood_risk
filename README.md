@@ -2,13 +2,14 @@
 
 This repo contains a model that given a longitude, latitude pair returns the
 risk that flooding will occur at the address. We compute two types of flood risk:
-The data used comes from [_kortforsyningen_][kortforsyningen] and the [danish environment ministry][miljoegis]
+The data used comes from [_kortforsyningen_][kortforsyningen] and the
+[danish environment ministry][miljoegis]
 
 #### Cloudburst
 
 Flooding caused by excessive rain. (_Skybrud_ in danish). The
 risk here is a combination of the factors following factors (english/danish).
-To read more about a factor visit the linked notebook
+To read more about a factor visit the linked notebooks
 
 -   **[(Hollowing/Lavning)][hollowingnotebook]:** A hollowing is a "hole" in the
     ground where water will collect.
