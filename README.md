@@ -2,22 +2,23 @@
 
 This repo contains a model that given a longitude, latitude pair returns the
 risk that flooding will occur at the address. We compute two types of flood risk:
-The data used comes from [_kortforsyningen_][kortforsyningen] and the [danish environment ministry][miljoegis]
+The data used comes from [_kortforsyningen_][kortforsyningen] and the
+[danish environment ministry][miljoegis]
 
 #### Cloudburst
 
 Flooding caused by excessive rain. (_Skybrud_ in danish). The
 risk here is a combination of the factors following factors (english/danish).
-To read more about a factor visit the linked notebook
+To read more about a factor visit the [notebook][notebook]. The factors include:
 
--   **[(Hollowing/Lavning)][hollowingnotebook]:** A hollowing is a "hole" in the
+-   **Hollowing/Lavning:** A hollowing is a "hole" in the
     ground where water will collect.
 
--   **[(Fastning/Befæstelsesgrad)][fastningnotebook]:** The amount of area
+-   **Fastning/Befæstelsesgrad:** The amount of area
     around the point that has buildings, roads or other surfaces the water can't
     drain through.
 
--   **[(Conductivity/Hydraulisk ledeevne)][conductivitynotebook]:** The ground
+-   **Conductivity/Hydraulisk ledeevne:** The ground
     type in the area.
 
 
@@ -28,7 +29,7 @@ To read more about a factor visit the linked notebook
 #### Storm flood
 
 Flooding caused by rising sea levels due to storm. This affects people who live
-close to the sea. The [flood notebook][floodnotebook] provides more detail
+close to the sea. The [notebook][notebook] provides more detail
 
 * * *
 
@@ -63,8 +64,7 @@ Before activating a pipenv shell a `.env` file should exists, copy the
 kortforsyningen is free.
 
 To run the model start pipenv and run `jupyter notebook` from the project root.
-See the [Rain-risk][rainnotebook] and [flood-risk][floodnotebook] notebooks to
-read more about the models and see them in action.
+See the notebook to read more about the models and see them in action.
 
 #### Testing
 
@@ -90,15 +90,7 @@ presents this model as a webpage.
 
 [miljoegis]: https://www.klimatilpasning.dk/kommuner/kortlaegning/data-til-kortlaegning/
 
-[hollowingnotebook]: ./notebooks/hollowing.ipynb
-
-[fastningnotebook]: ./notebooks/fastning.ipynb
-
-[conductivitynotebook]: ./notebooks/conductivity.ipynb
-
-[floodnotebook]: ./notebooks/flood.ipynb
-
-[rainnotebook]: ./notebooks/rain.ipynb
+[notebook]: ./documentation.ipynb
 
 [bbr]: https://bbr.dk/forside
 

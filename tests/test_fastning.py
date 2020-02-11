@@ -34,7 +34,7 @@ class TestFastning(unittest.TestCase):
 
         self.assertEqual(fastning_image_to_value(fastning_image), 44.75)
 
-    def test_get_conductivity_response_high(self):
+    def test_get_fasting_response_high(self):
         office_address = address_to_house_data("Jarmers Pl. 2, 1551 København")[
             "coordinates"
         ]
@@ -51,7 +51,7 @@ class TestFastning(unittest.TestCase):
         )
         self.assertTrue(np.allclose(actual_image, expected_image, atol=1))
 
-    def test_get_conductivity_response_medium(self):
+    def test_get_fasting_response_medium(self):
         home_coordinates = address_to_house_data("Kjærmarken 103, 6771 gredstedbro")[
             "coordinates"
         ]

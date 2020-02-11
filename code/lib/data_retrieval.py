@@ -49,7 +49,8 @@ def get_basement_response(address_id):
     )
     if response.status_code != 200:
         raise ValueError(f"Invalid address_id: {address_id}")
-    basement_size = response.json()["objects"][0]["values"]["bld_area_basement"]
+    houses = response.json()["objects"]
+    basement_size = houses[0]["values"]["bld_area_basement"] if len(houses) > 0 else 0
     return {
         "risk": "high" if basement_size is not None and basement_size > 0 else "low"
     }
