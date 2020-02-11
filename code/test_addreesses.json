@@ -1,0 +1,1007 @@
+{
+  "meta": {
+    "comment": "THis data was obtained by asking geomatic for 100 random addresses "
+  },
+  "objects": [
+    {
+      "self": {
+        "id": "eab79196-c548-4e77-b503-0000002a2da7",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/eab79196-c548-4e77-b503-0000002a2da7"
+      },
+      "values": {
+        "acadr_name": "Vestergade 49, 5000 Odense C"
+      }
+    },
+    {
+      "self": {
+        "id": "5e37269f-6d00-4ab8-8899-000004c2adc6",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/5e37269f-6d00-4ab8-8899-000004c2adc6"
+      },
+      "values": {
+        "acadr_name": "Symfonivej 25, Højby Lyng, 4573 Højby"
+      }
+    },
+    {
+      "self": {
+        "id": "40c5bdc5-54e5-4401-bb57-000009994a4f",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/40c5bdc5-54e5-4401-bb57-000009994a4f"
+      },
+      "values": {
+        "acadr_name": "Funder Ådalsvej 4, 8600 Silkeborg"
+      }
+    },
+    {
+      "self": {
+        "id": "f7a940ad-4851-4bb6-9847-00001eabb303",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/f7a940ad-4851-4bb6-9847-00001eabb303"
+      },
+      "values": {
+        "acadr_name": "Koldingvej 82, Taps, 6070 Christiansfeld"
+      }
+    },
+    {
+      "self": {
+        "id": "915aa520-bc32-4a6f-9400-00002278c6e8",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/915aa520-bc32-4a6f-9400-00002278c6e8"
+      },
+      "values": {
+        "acadr_name": "Pilebakken 11, Skt Klemens, 5260 Odense S"
+      }
+    },
+    {
+      "self": {
+        "id": "2d397cfe-dbcb-47d7-a1a6-00003f8a4639",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/2d397cfe-dbcb-47d7-a1a6-00003f8a4639"
+      },
+      "values": {
+        "acadr_name": "Follingsvej 50, 9200 Aalborg SV"
+      }
+    },
+    {
+      "self": {
+        "id": "d7e9be13-b7b8-4722-a7b8-000040366240",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/d7e9be13-b7b8-4722-a7b8-000040366240"
+      },
+      "values": {
+        "acadr_name": "Bøgeparken 30, 6230 Rødekro"
+      }
+    },
+    {
+      "self": {
+        "id": "400f66ff-89db-4f59-9137-0000439b4c82",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/400f66ff-89db-4f59-9137-0000439b4c82"
+      },
+      "values": {
+        "acadr_name": "Johan Kellers Vej 33, 2450 København SV"
+      }
+    },
+    {
+      "self": {
+        "id": "737fe077-0944-42b1-80e4-0000491d1a75",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/737fe077-0944-42b1-80e4-0000491d1a75"
+      },
+      "values": {
+        "acadr_name": "Lindeparken 16, 4690 Haslev"
+      }
+    },
+    {
+      "self": {
+        "id": "41ad925a-ab1d-4c6e-82a2-00004bb4de94",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/41ad925a-ab1d-4c6e-82a2-00004bb4de94"
+      },
+      "values": {
+        "acadr_name": "Heldager Mosevej 25, Heldager, 5700 Svendborg"
+      }
+    },
+    {
+      "self": {
+        "id": "c0881317-3a9a-4863-ae40-0000534efa3d",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c0881317-3a9a-4863-ae40-0000534efa3d"
+      },
+      "values": {
+        "acadr_name": "Miklagårdsvej 1, 3650 Ølstykke"
+      }
+    },
+    {
+      "self": {
+        "id": "c7925ac7-8943-4941-9b99-0000602678dd",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c7925ac7-8943-4941-9b99-0000602678dd"
+      },
+      "values": {
+        "acadr_name": "Hvidtjørnevej 13, 2720 Vanløse"
+      }
+    },
+    {
+      "self": {
+        "id": "a61421a0-5414-4615-9c59-0000660aa173",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/a61421a0-5414-4615-9c59-0000660aa173"
+      },
+      "values": {
+        "acadr_name": "Løkkegade 6, 9480 Løkken"
+      }
+    },
+    {
+      "self": {
+        "id": "18a4a0f6-b27d-4f57-ab30-00006c1b252b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/18a4a0f6-b27d-4f57-ab30-00006c1b252b"
+      },
+      "values": {
+        "acadr_name": "Hydevadvej 52, Hydevad, 6230 Rødekro"
+      }
+    },
+    {
+      "self": {
+        "id": "3ec9115e-9419-4340-a318-00006dbf4db4",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/3ec9115e-9419-4340-a318-00006dbf4db4"
+      },
+      "values": {
+        "acadr_name": "Gårdhaven 8, 4760 Vordingborg"
+      }
+    },
+    {
+      "self": {
+        "id": "4d020f62-e1e0-4cde-946e-000074434689",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/4d020f62-e1e0-4cde-946e-000074434689"
+      },
+      "values": {
+        "acadr_name": "Hovmarksvej 10B, 8700 Horsens"
+      }
+    },
+    {
+      "self": {
+        "id": "5a028f7f-751a-4dc3-9e44-000078b3d4ce",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/5a028f7f-751a-4dc3-9e44-000078b3d4ce"
+      },
+      "values": {
+        "acadr_name": "Voldparken 2, 2700 Brønshøj"
+      }
+    },
+    {
+      "self": {
+        "id": "4a3ce3a2-4c6f-466b-9e95-00007cd4d90b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/4a3ce3a2-4c6f-466b-9e95-00007cd4d90b"
+      },
+      "values": {
+        "acadr_name": "Hyrehøjvej 21, Ordrup Næs, 4540 Fårevejle"
+      }
+    },
+    {
+      "self": {
+        "id": "d712e213-6333-4454-9aa4-00008bbee83e",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/d712e213-6333-4454-9aa4-00008bbee83e"
+      },
+      "values": {
+        "acadr_name": "Vestergade 43, 8000 Aarhus C"
+      }
+    },
+    {
+      "self": {
+        "id": "30db73f5-ca9f-4bc1-9652-00008edec87a",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/30db73f5-ca9f-4bc1-9652-00008edec87a"
+      },
+      "values": {
+        "acadr_name": "Bomarks-Åsen 1, Udsholt, 3230 Græsted"
+      }
+    },
+    {
+      "self": {
+        "id": "748ea192-e876-4d0e-9d61-00009073327b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/748ea192-e876-4d0e-9d61-00009073327b"
+      },
+      "values": {
+        "acadr_name": "Peder Møllers Plads 4, 9700 Brønderslev"
+      }
+    },
+    {
+      "self": {
+        "id": "f8e8ce37-0c3c-48bf-9005-000090d2b653",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/f8e8ce37-0c3c-48bf-9005-000090d2b653"
+      },
+      "values": {
+        "acadr_name": "Samsøvej 25, 4700 Næstved"
+      }
+    },
+    {
+      "self": {
+        "id": "16fcbf27-f6c0-4159-81e0-0000930d0714",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/16fcbf27-f6c0-4159-81e0-0000930d0714"
+      },
+      "values": {
+        "acadr_name": "Præstegårdsvej 74, 6900 Skjern"
+      }
+    },
+    {
+      "self": {
+        "id": "b986b68d-d903-4f4e-8c38-0000937f4f54",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/b986b68d-d903-4f4e-8c38-0000937f4f54"
+      },
+      "values": {
+        "acadr_name": "Måre Byvej 38A, Måre, 5853 Ørbæk"
+      }
+    },
+    {
+      "self": {
+        "id": "9df02945-a768-4a75-972c-0000940f711f",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/9df02945-a768-4a75-972c-0000940f711f"
+      },
+      "values": {
+        "acadr_name": "Højensvej 32L, 9990 Skagen"
+      }
+    },
+    {
+      "self": {
+        "id": "e402180e-a952-4de2-9993-0000977b8eab",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/e402180e-a952-4de2-9993-0000977b8eab"
+      },
+      "values": {
+        "acadr_name": "Ulsted Kærvej 7, Ulsted, 9370 Hals"
+      }
+    },
+    {
+      "self": {
+        "id": "657bbe76-2810-4270-bbed-000097ee7799",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/657bbe76-2810-4270-bbed-000097ee7799"
+      },
+      "values": {
+        "acadr_name": "Nattergalevej 56, 2400 København NV"
+      }
+    },
+    {
+      "self": {
+        "id": "cff7e65c-1629-4c88-8d2b-00009d6e3886",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/cff7e65c-1629-4c88-8d2b-00009d6e3886"
+      },
+      "values": {
+        "acadr_name": "Finlandsvej 59, 7100 Vejle"
+      }
+    },
+    {
+      "self": {
+        "id": "810776de-fa34-4e67-9bee-00009eb64cc8",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/810776de-fa34-4e67-9bee-00009eb64cc8"
+      },
+      "values": {
+        "acadr_name": "Niels Skiverens Vej 5, Skiveren, 9982 Ålbæk"
+      }
+    },
+    {
+      "self": {
+        "id": "decd3d8a-0232-408c-88cd-00009fdaf70c",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/decd3d8a-0232-408c-88cd-00009fdaf70c"
+      },
+      "values": {
+        "acadr_name": "Domusvej 4, Jersie, 2680 Solrød Strand"
+      }
+    },
+    {
+      "self": {
+        "id": "6d2e1d0c-1c69-4c28-8938-0000a2ebe3d0",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/6d2e1d0c-1c69-4c28-8938-0000a2ebe3d0"
+      },
+      "values": {
+        "acadr_name": "Skyggevej 47, 7441 Bording"
+      }
+    },
+    {
+      "self": {
+        "id": "55cc95e8-43df-4961-a978-0000a6fed4b2",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/55cc95e8-43df-4961-a978-0000a6fed4b2"
+      },
+      "values": {
+        "acadr_name": "Lottehaven 4, Sorthat-Muleby, 3700 Rønne"
+      }
+    },
+    {
+      "self": {
+        "id": "11ba5ff6-af0c-41ee-8742-0000a9523eab",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/11ba5ff6-af0c-41ee-8742-0000a9523eab"
+      },
+      "values": {
+        "acadr_name": "Skotlandsgade 11, 2300 København S"
+      }
+    },
+    {
+      "self": {
+        "id": "d85fb80e-d427-4cd6-9f17-0000ac828852",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/d85fb80e-d427-4cd6-9f17-0000ac828852"
+      },
+      "values": {
+        "acadr_name": "Tane Hedevej 66, Ho, 6857 Blåvand"
+      }
+    },
+    {
+      "self": {
+        "id": "d9af595d-b0ef-4969-9da7-0000b2d5cfed",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/d9af595d-b0ef-4969-9da7-0000b2d5cfed"
+      },
+      "values": {
+        "acadr_name": "Samsøvej 15, Saksild Str, 8300 Odder"
+      }
+    },
+    {
+      "self": {
+        "id": "df94581d-3d3d-401d-b061-0000b6918d4e",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/df94581d-3d3d-401d-b061-0000b6918d4e"
+      },
+      "values": {
+        "acadr_name": "Hvidovrevej 128H, 2650 Hvidovre"
+      }
+    },
+    {
+      "self": {
+        "id": "db071cca-eda3-4434-9764-0000bb8ed94d",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/db071cca-eda3-4434-9764-0000bb8ed94d"
+      },
+      "values": {
+        "acadr_name": "Vibevej 4, Mindegården, 6094 Hejls"
+      }
+    },
+    {
+      "self": {
+        "id": "f47435f3-067c-4946-b0fa-0000be32804b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/f47435f3-067c-4946-b0fa-0000be32804b"
+      },
+      "values": {
+        "acadr_name": "Havnevej 6, Havnsø, 4591 Føllenslev"
+      }
+    },
+    {
+      "self": {
+        "id": "cb6ae914-9de0-4773-b988-0000c161028e",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/cb6ae914-9de0-4773-b988-0000c161028e"
+      },
+      "values": {
+        "acadr_name": "Stokkerhovedvej 2, Styding, 6500 Vojens"
+      }
+    },
+    {
+      "self": {
+        "id": "96d0b0d4-cc22-4e65-b7c8-0000ca0312b4",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/96d0b0d4-cc22-4e65-b7c8-0000ca0312b4"
+      },
+      "values": {
+        "acadr_name": "Genvej 4, Allinge, 3770 Allinge"
+      }
+    },
+    {
+      "self": {
+        "id": "fca11538-9b8b-4d6a-b213-0000d3cb1709",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/fca11538-9b8b-4d6a-b213-0000d3cb1709"
+      },
+      "values": {
+        "acadr_name": "Poul la Cours Vej 52, 8660 Skanderborg"
+      }
+    },
+    {
+      "self": {
+        "id": "17cf6d55-4ff8-4584-96a0-0000d9f2ccd3",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/17cf6d55-4ff8-4584-96a0-0000d9f2ccd3"
+      },
+      "values": {
+        "acadr_name": "Lars Murersvej 21, Vedersø, 6990 Ulfborg"
+      }
+    },
+    {
+      "self": {
+        "id": "9844b850-b40d-4a63-95ca-0000dadecf27",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/9844b850-b40d-4a63-95ca-0000dadecf27"
+      },
+      "values": {
+        "acadr_name": "Strandgårdsparken 1A, 5600 Faaborg"
+      }
+    },
+    {
+      "self": {
+        "id": "d53f5dbf-c95d-4b3a-b903-0000dd0e7ca5",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/d53f5dbf-c95d-4b3a-b903-0000dd0e7ca5"
+      },
+      "values": {
+        "acadr_name": "Freerslev Annex 11, Freerslev, 4690 Haslev"
+      }
+    },
+    {
+      "self": {
+        "id": "c4d3b0ee-92f8-4a8b-972a-0000e1a4cc20",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c4d3b0ee-92f8-4a8b-972a-0000e1a4cc20"
+      },
+      "values": {
+        "acadr_name": "Nygade 105, 3200 Helsinge"
+      }
+    },
+    {
+      "self": {
+        "id": "ab4fa390-6b68-4c56-96d4-0000e46f090c",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/ab4fa390-6b68-4c56-96d4-0000e46f090c"
+      },
+      "values": {
+        "acadr_name": "Vejgården 95, 4160 Herlufmagle"
+      }
+    },
+    {
+      "self": {
+        "id": "fc944c8e-95df-4643-969c-0000eccb3975",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/fc944c8e-95df-4643-969c-0000eccb3975"
+      },
+      "values": {
+        "acadr_name": "Store Kannikestræde 13, 1169 København K"
+      }
+    },
+    {
+      "self": {
+        "id": "7d20614b-2491-4073-aaf4-0000f37bf3a8",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7d20614b-2491-4073-aaf4-0000f37bf3a8"
+      },
+      "values": {
+        "acadr_name": "Bækkeskovvej 34, 2700 Brønshøj"
+      }
+    },
+    {
+      "self": {
+        "id": "12d3c708-e8c3-4a9b-8f54-0000f37d0706",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/12d3c708-e8c3-4a9b-8f54-0000f37d0706"
+      },
+      "values": {
+        "acadr_name": "Vestre Alle 51, 9000 Aalborg"
+      }
+    },
+    {
+      "self": {
+        "id": "a087279c-df7d-475d-8ef6-0000f4907528",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/a087279c-df7d-475d-8ef6-0000f4907528"
+      },
+      "values": {
+        "acadr_name": "Fiskedamsgade 2, 2100 København Ø"
+      }
+    },
+    {
+      "self": {
+        "id": "6b873a82-14ae-4a13-aec6-0000f65fb227",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/6b873a82-14ae-4a13-aec6-0000f65fb227"
+      },
+      "values": {
+        "acadr_name": "Lillebæltsvænget 34, 5500 Middelfart"
+      }
+    },
+    {
+      "self": {
+        "id": "85a6b525-a34d-4e7b-8d1e-0000fba91d7c",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/85a6b525-a34d-4e7b-8d1e-0000fba91d7c"
+      },
+      "values": {
+        "acadr_name": "Mommarkvej 327, Tandslet, 6470 Sydals"
+      }
+    },
+    {
+      "self": {
+        "id": "bdad0d08-2484-4532-ac36-0000fcce9923",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/bdad0d08-2484-4532-ac36-0000fcce9923"
+      },
+      "values": {
+        "acadr_name": "Østerkrog 4, 6731 Tjæreborg"
+      }
+    },
+    {
+      "self": {
+        "id": "3ce9588e-966a-4dd5-9af3-0000fcf834f9",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/3ce9588e-966a-4dd5-9af3-0000fcf834f9"
+      },
+      "values": {
+        "acadr_name": "Ildervej 3, Ø Hærup, 7860 Spøttrup"
+      }
+    },
+    {
+      "self": {
+        "id": "7feda21d-0624-4a64-ab85-0000fee7a9ac",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7feda21d-0624-4a64-ab85-0000fee7a9ac"
+      },
+      "values": {
+        "acadr_name": "Enebærvej 31C, Sejs-Svejbæk, 8600 Silkeborg"
+      }
+    },
+    {
+      "self": {
+        "id": "7722e023-6fde-44ea-84a7-0001094d684c",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7722e023-6fde-44ea-84a7-0001094d684c"
+      },
+      "values": {
+        "acadr_name": "Skelagervej 375B, 9000 Aalborg"
+      }
+    },
+    {
+      "self": {
+        "id": "b5db8529-6ed5-4aca-9b66-00010c57369a",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/b5db8529-6ed5-4aca-9b66-00010c57369a"
+      },
+      "values": {
+        "acadr_name": "Horsedammen 1, 3000 Helsingør"
+      }
+    },
+    {
+      "self": {
+        "id": "c2f2949b-4823-447a-b236-000112876f5e",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c2f2949b-4823-447a-b236-000112876f5e"
+      },
+      "values": {
+        "acadr_name": "Lyngby Hovedgade 39, 2800 Kongens Lyngby"
+      }
+    },
+    {
+      "self": {
+        "id": "c326f124-9348-43a5-a1d2-00011626c611",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c326f124-9348-43a5-a1d2-00011626c611"
+      },
+      "values": {
+        "acadr_name": "Agervej 16, Næsby Strand, 4200 Slagelse"
+      }
+    },
+    {
+      "self": {
+        "id": "1fa16875-fa29-449e-bf34-000117dd651b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/1fa16875-fa29-449e-bf34-000117dd651b"
+      },
+      "values": {
+        "acadr_name": "Romlundvej 38, 8831 Løgstrup"
+      }
+    },
+    {
+      "self": {
+        "id": "d0430d3d-d0ed-4815-a18e-000118c06bc6",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/d0430d3d-d0ed-4815-a18e-000118c06bc6"
+      },
+      "values": {
+        "acadr_name": "Terkelsbøl Bygade 74, 6360 Tinglev"
+      }
+    },
+    {
+      "self": {
+        "id": "c1eda9b9-fe48-4630-b412-00011baa280b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c1eda9b9-fe48-4630-b412-00011baa280b"
+      },
+      "values": {
+        "acadr_name": "Industrivej 3, 4534 Hørve"
+      }
+    },
+    {
+      "self": {
+        "id": "59e5cc27-28a6-4c20-87c6-00011f7a2912",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/59e5cc27-28a6-4c20-87c6-00011f7a2912"
+      },
+      "values": {
+        "acadr_name": "Thujavej 2, Dyrup, 5250 Odense SV"
+      }
+    },
+    {
+      "self": {
+        "id": "128f2253-8d80-430c-b7d8-000121c87386",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/128f2253-8d80-430c-b7d8-000121c87386"
+      },
+      "values": {
+        "acadr_name": "Engtoften 2, 7800 Skive"
+      }
+    },
+    {
+      "self": {
+        "id": "7badc673-7b81-48c2-a077-0001226f20ed",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7badc673-7b81-48c2-a077-0001226f20ed"
+      },
+      "values": {
+        "acadr_name": "Vestervænge 3, 8950 Ørsted"
+      }
+    },
+    {
+      "self": {
+        "id": "6a6120f2-35f8-4757-a48c-000123c2ea8a",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/6a6120f2-35f8-4757-a48c-000123c2ea8a"
+      },
+      "values": {
+        "acadr_name": "Gothenborgvej 2, 8653 Them"
+      }
+    },
+    {
+      "self": {
+        "id": "b5490d0d-ca71-4423-b833-0001273f27e3",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/b5490d0d-ca71-4423-b833-0001273f27e3"
+      },
+      "values": {
+        "acadr_name": "Krbg Ladegårds Vej 32, 3000 Helsingør"
+      }
+    },
+    {
+      "self": {
+        "id": "a7a9add9-8efe-4485-8da6-0001299d6ecb",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/a7a9add9-8efe-4485-8da6-0001299d6ecb"
+      },
+      "values": {
+        "acadr_name": "Bretagnevej 6C, 3100 Hornbæk"
+      }
+    },
+    {
+      "self": {
+        "id": "87883111-c0bc-454e-a74b-00012a4a473d",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/87883111-c0bc-454e-a74b-00012a4a473d"
+      },
+      "values": {
+        "acadr_name": "Vestergade 3, 8870 Langå"
+      }
+    },
+    {
+      "self": {
+        "id": "334fb3a2-3846-42e0-b80b-00012d2f2b9d",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/334fb3a2-3846-42e0-b80b-00012d2f2b9d"
+      },
+      "values": {
+        "acadr_name": "Mellemengen 15, 2980 Kokkedal"
+      }
+    },
+    {
+      "self": {
+        "id": "27c3da33-3a82-4d22-b5ba-00012defd2d2",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/27c3da33-3a82-4d22-b5ba-00012defd2d2"
+      },
+      "values": {
+        "acadr_name": "Østerhøjvej 74, 2750 Ballerup"
+      }
+    },
+    {
+      "self": {
+        "id": "c21df6dc-ce1b-40e9-82ef-000130815d4b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c21df6dc-ce1b-40e9-82ef-000130815d4b"
+      },
+      "values": {
+        "acadr_name": "Voldumvej 47, 2610 Rødovre"
+      }
+    },
+    {
+      "self": {
+        "id": "1ef53082-9960-4dbc-8314-000130ede8ee",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/1ef53082-9960-4dbc-8314-000130ede8ee"
+      },
+      "values": {
+        "acadr_name": "Lundestrædet 23, 4300 Holbæk"
+      }
+    },
+    {
+      "self": {
+        "id": "eaed4e03-7925-43ce-9c1d-000131dcfc5c",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/eaed4e03-7925-43ce-9c1d-000131dcfc5c"
+      },
+      "values": {
+        "acadr_name": "Tanavej 25, 2770 Kastrup"
+      }
+    },
+    {
+      "self": {
+        "id": "b04d0861-b23a-42a2-8259-0001327826b5",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/b04d0861-b23a-42a2-8259-0001327826b5"
+      },
+      "values": {
+        "acadr_name": "Marehalmen 63, Søndervig, 6950 Ringkøbing"
+      }
+    },
+    {
+      "self": {
+        "id": "7876d069-ca67-4070-a3d4-00013c67f7e1",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7876d069-ca67-4070-a3d4-00013c67f7e1"
+      },
+      "values": {
+        "acadr_name": "Birkevej 29, 3320 Skævinge"
+      }
+    },
+    {
+      "self": {
+        "id": "762aa87c-d1c2-40d5-be65-00014050d1bc",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/762aa87c-d1c2-40d5-be65-00014050d1bc"
+      },
+      "values": {
+        "acadr_name": "Egebjergvej 209, Kildehusene, 4500 Nykøbing Sj"
+      }
+    },
+    {
+      "self": {
+        "id": "7b38a1bf-c213-4a2d-ad81-000140deef33",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7b38a1bf-c213-4a2d-ad81-000140deef33"
+      },
+      "values": {
+        "acadr_name": "Strynøgade 7, 9000 Aalborg"
+      }
+    },
+    {
+      "self": {
+        "id": "13914797-ec8c-4153-8643-000149562b4b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/13914797-ec8c-4153-8643-000149562b4b"
+      },
+      "values": {
+        "acadr_name": "Enghaven 3, Uvelse, 3550 Slangerup"
+      }
+    },
+    {
+      "self": {
+        "id": "052265ff-0ec6-4353-a9d8-000151272095",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/052265ff-0ec6-4353-a9d8-000151272095"
+      },
+      "values": {
+        "acadr_name": "Brunevang 127, 2610 Rødovre"
+      }
+    },
+    {
+      "self": {
+        "id": "f4a3f194-7bcd-4537-84d8-000154406b7e",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/f4a3f194-7bcd-4537-84d8-000154406b7e"
+      },
+      "values": {
+        "acadr_name": "Skivholmevej 92, Skivholme, 8464 Galten"
+      }
+    },
+    {
+      "self": {
+        "id": "2a25c44d-30f6-46fb-8419-000154526b9c",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/2a25c44d-30f6-46fb-8419-000154526b9c"
+      },
+      "values": {
+        "acadr_name": "Solbakkevej 14, 8940 Randers SV"
+      }
+    },
+    {
+      "self": {
+        "id": "9b444473-15c8-4493-a3de-000156e73981",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/9b444473-15c8-4493-a3de-000156e73981"
+      },
+      "values": {
+        "acadr_name": "Græsvangen 107, 8381 Tilst"
+      }
+    },
+    {
+      "self": {
+        "id": "7a124d50-aace-46e7-99c1-000159247ee0",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/7a124d50-aace-46e7-99c1-000159247ee0"
+      },
+      "values": {
+        "acadr_name": "Ørebrovej 200, Korsholm, 9690 Fjerritslev"
+      }
+    },
+    {
+      "self": {
+        "id": "5173e924-9ffc-40a9-a999-00015aa3eedd",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/5173e924-9ffc-40a9-a999-00015aa3eedd"
+      },
+      "values": {
+        "acadr_name": "Gersagerparken 61, 2670 Greve"
+      }
+    },
+    {
+      "self": {
+        "id": "3ab8848d-4f07-4367-a3d5-00016033cedb",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/3ab8848d-4f07-4367-a3d5-00016033cedb"
+      },
+      "values": {
+        "acadr_name": "I.A.Larsensvej 38, 5300 Kerteminde"
+      }
+    },
+    {
+      "self": {
+        "id": "8e8b6417-aea0-4e4c-88bc-00016a2e30ab",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/8e8b6417-aea0-4e4c-88bc-00016a2e30ab"
+      },
+      "values": {
+        "acadr_name": "Dalstrøget 107, 2870 Dyssegård"
+      }
+    },
+    {
+      "self": {
+        "id": "c82e448c-5dcb-4374-b4b9-00016c2a096a",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/c82e448c-5dcb-4374-b4b9-00016c2a096a"
+      },
+      "values": {
+        "acadr_name": "Skjoldagervej 50, 2820 Gentofte"
+      }
+    },
+    {
+      "self": {
+        "id": "19f5ad33-5279-454a-ac82-000174db6136",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/19f5ad33-5279-454a-ac82-000174db6136"
+      },
+      "values": {
+        "acadr_name": "Ramsøvejen 21, 4621 Gadstrup"
+      }
+    },
+    {
+      "self": {
+        "id": "8661bed9-7720-4620-ae73-0001791ae8c7",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/8661bed9-7720-4620-ae73-0001791ae8c7"
+      },
+      "values": {
+        "acadr_name": "Østervænget 19, Gassum, 8981 Spentrup"
+      }
+    },
+    {
+      "self": {
+        "id": "787bac90-6abe-4eab-aa83-00017b468fdb",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/787bac90-6abe-4eab-aa83-00017b468fdb"
+      },
+      "values": {
+        "acadr_name": "Ringparken 18, 5600 Faaborg"
+      }
+    },
+    {
+      "self": {
+        "id": "159c7229-e7c7-43f2-aa18-0001852a7b54",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/159c7229-e7c7-43f2-aa18-0001852a7b54"
+      },
+      "values": {
+        "acadr_name": "Ved Lunden 10, 8230 Åbyhøj"
+      }
+    },
+    {
+      "self": {
+        "id": "93eb0aa7-5836-493b-b556-000189c32a29",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/93eb0aa7-5836-493b-b556-000189c32a29"
+      },
+      "values": {
+        "acadr_name": "Juliedalvej 16, Flinterup, 4180 Sorø"
+      }
+    },
+    {
+      "self": {
+        "id": "3b9fdc30-d992-4ecd-95da-00018e68849b",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/3b9fdc30-d992-4ecd-95da-00018e68849b"
+      },
+      "values": {
+        "acadr_name": "Ingstrupvej 45A, Rødding, 8830 Tjele"
+      }
+    },
+    {
+      "self": {
+        "id": "345c297f-1b34-4479-945a-00018f013879",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/345c297f-1b34-4479-945a-00018f013879"
+      },
+      "values": {
+        "acadr_name": "Bramslykkevej 8, 2500 Valby"
+      }
+    },
+    {
+      "self": {
+        "id": "753f8016-0772-46aa-8c7f-0001973a90c9",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/753f8016-0772-46aa-8c7f-0001973a90c9"
+      },
+      "values": {
+        "acadr_name": "Slotsfogedvej 5, 2400 København NV"
+      }
+    },
+    {
+      "self": {
+        "id": "43a8b135-9152-4bbd-b833-0001a24b9ce0",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/43a8b135-9152-4bbd-b833-0001a24b9ce0"
+      },
+      "values": {
+        "acadr_name": "Bakkevej 26, 5492 Vissenbjerg"
+      }
+    },
+    {
+      "self": {
+        "id": "6ac734e1-bc1b-4a90-ad6b-0001a7d01dce",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/6ac734e1-bc1b-4a90-ad6b-0001a7d01dce"
+      },
+      "values": {
+        "acadr_name": "Kirkemarken 23, Kirkemarken, 5683 Haarby"
+      }
+    },
+    {
+      "self": {
+        "id": "0b4bf54e-3f87-4575-95f0-0001aa38c0a5",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/0b4bf54e-3f87-4575-95f0-0001aa38c0a5"
+      },
+      "values": {
+        "acadr_name": "Jægervænget 4, 7100 Vejle"
+      }
+    },
+    {
+      "self": {
+        "id": "866717c2-8965-4a4e-a842-0001aac6865d",
+        "type": "unit",
+        "url": "https://apps.conzoom.eu/api/v1/values/dk/unit/866717c2-8965-4a4e-a842-0001aac6865d"
+      },
+      "values": {
+        "acadr_name": "Odensevej 1, Verninge, 5690 Tommerup"
+      }
+    }
+  ]
+}

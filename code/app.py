@@ -40,8 +40,8 @@ def get_flood_risk(address=None, bbr_id=None):
         )
         flood_risk = response["storm_flood"]["risk"]
         rain_risk = response["rain_risk"]["risk"]
-
-        logger.info(f"Got {address}, with {rain_risk=} and {flood_risk=}")
+        place = address if bbr_id is None else bbr_id
+        logger.info(f"Got {place}, with {rain_risk=} and {flood_risk=}")
         response = json.dumps(response)
     except Exception as e:
         sentry_sdk.capture_exception(e)
