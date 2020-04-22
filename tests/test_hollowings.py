@@ -98,8 +98,8 @@ class TestHollowings(unittest.TestCase):
         )
         self.assertTrue(np.allclose(actual_image, expected_image, atol=1))
         resp.pop("image")
-        self.assertAlmostEqual(resp["house_percentage"], 2.59)
-        self.assertAlmostEqual(resp["area_percentage"], 7.32)
+        self.assertAlmostEqual(resp["house_percentage"], 0.19)
+        self.assertAlmostEqual(resp["area_percentage"], 6.83)
 
 
 if __name__ == "__main__":

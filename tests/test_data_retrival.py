@@ -47,7 +47,7 @@ class TestDataRetrieval(unittest.TestCase):
         box = bounding_box(data["coordinates"], ESPG="25832")
         self.assertEqual(
             box,
-            "483622.5205332278,6139451.855766358,483736.7176466355,6139564.964581124",
+            "483622.52053322777,6139451.855766358,483736.7176466355,6139564.964581124",
         )
 
     def test_get_satelite_img(self):
