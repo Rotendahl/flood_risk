@@ -41,7 +41,7 @@ class TestFastning(unittest.TestCase):
         resp = get_fastning_response(office_address)
 
         self.assertEqual(resp["value"], 51.53)
-        self.assertEqual(resp["risk"], "high")
+        self.assertEqual(resp["risk"], "medium")
 
         actual_image = np.asarray(Image.open(BytesIO(base64.b64decode(resp["image"]))))
         expected_image = np.asarray(
@@ -57,7 +57,7 @@ class TestFastning(unittest.TestCase):
         ]
         resp = get_fastning_response(home_coordinates)
 
-        self.assertEqual(resp["risk"], "medium")
+        self.assertEqual(resp["risk"], "low")
         self.assertEqual(resp["value"], 44.75)
 
 

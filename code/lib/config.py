@@ -19,8 +19,8 @@ CONDUCTIVITY_LIMITS = {
     "medium": 350,  # You have medium risk if you are above low limit but below this
 }
 FASTNING_LIMITS = {
-    "low": 35,  # Fastning degree below this means low risk
-    "medium": 50,  # Fastning degree above low but below this gives medium risk
+    "low": 45,  # Fastning degree below this means low risk
+    "medium": 56,  # Fastning degree above low but below this gives medium risk
     # Higher than both gives high risk
 }
 
