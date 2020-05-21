@@ -2,9 +2,9 @@ import unittest
 import sys
 import json
 
-sys.path.insert(0, "./code")  # noqa
+sys.path.insert(0, "./code")
 
-from code.app import lambda_handler, get_flood_risk
+from code.app import lambda_handler, get_flood_risk  # noqa
 
 
 class TestRainRisk(unittest.TestCase):
