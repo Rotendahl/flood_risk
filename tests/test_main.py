@@ -11,7 +11,7 @@ class TestRainRisk(unittest.TestCase):
     def test_get_flood_risk_response(self):
         resp = json.loads(get_flood_risk("Kjærmarken 103, 6771 gredstedbro"))
         self.assertEqual(resp["rain_risk"]["factors"]["basement"]["risk"], "low")
-        self.assertEqual(resp["rain_risk"]["factors"]["fastning"]["risk"], "medium")
+        self.assertEqual(resp["rain_risk"]["factors"]["fastning"]["risk"], "low")
         self.assertEqual(resp["rain_risk"]["factors"]["hollowing"]["risk"], "low")
         self.assertEqual(resp["rain_risk"]["factors"]["conductivity"]["risk"], "low")
         self.assertEqual(resp["rain_risk"]["risk"], "low")
