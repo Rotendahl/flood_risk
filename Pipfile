@@ -7,18 +7,18 @@ verify_ssl = true
 black = "==19.10b0"
 coverage = "~=5.1"
 coveralls = "~=2.0.0"
-flake8 = "~=3.8.1"
+flake8 = "~=3.8.3"
 aiohttp = "*"
 matplotlib = "*"
 
 [packages]
 pyproj = "~=2.6.1"
-pillow = "~=7.1.2"
-pandas = "~=1.0.3"
-requests = "~=2.22.0"
-tqdm = "~=4.46.0"
-sentry-sdk = "~=0.14.3"
-numpy = "~=1.18.4"
+pillow = "~=7.2.0"
+pandas = "~=1.0.5"
+requests = "~=2.24.0"
+tqdm = "~=4.47.0"
+sentry-sdk = "~=0.15.1"
+numpy = "~=1.19.0"
 
 [requires]
 python_version = "3.8"
