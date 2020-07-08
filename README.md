@@ -8,7 +8,7 @@ The data used comes from [_kortforsyningen_][kortforsyningen] and the
 #### Cloudburst
 
 Flooding caused by excessive rain. (_Skybrud_ in danish). The
-risk here is a combination of the factors following factors (english/danish).
+risk is a combination of the following factors (english/danish).
 To read more about a factor visit the [notebook][notebook]. The factors include:
 
 -   **Hollowing/Lavning:** A hollowing is a "hole" in the
