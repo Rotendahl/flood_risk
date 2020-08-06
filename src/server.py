@@ -1,8 +1,9 @@
+from flask import request, jsonify, Flask
 import json
 import logging
 import sentry_sdk
 import os
-from lib import (
+from .lib import (
     address_to_house_data,
     bbr_id_to_house_data,
     get_rain_risk_response,
@@ -42,7 +43,6 @@ def get_flood_risk(address=None, bbr_id=None):
         rain_risk = response["rain_risk"]["risk"]
         place = address if bbr_id is None else bbr_id
         logger.info(f"Got {place}, with {rain_risk=} and {flood_risk=}")
-        response = json.dumps(response)
     except Exception as e:
         sentry_sdk.capture_exception(e)
         logger.error(e)
@@ -50,38 +50,39 @@ def get_flood_risk(address=None, bbr_id=None):
         return response
 
 
-def lambda_handler(event, context):
-    headers = {
-        "content-type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "OPTIONS,GET",
-    }
-    query_keys = (
-        []
-        if event["queryStringParameters"] is None
-        else event["queryStringParameters"].keys()
-    )
+app = Flask(__name__)
 
-    if "address" in query_keys:
-        response = get_flood_risk(address=event["queryStringParameters"]["address"])
-    elif "unadr_bbrid" in query_keys:
-        response = get_flood_risk(bbr_id=event["queryStringParameters"]["unadr_bbrid"])
-    else:
-        logger.warning(f"No address/unard_bbrid specified: {event=}, {context=}")
-        return {
-            "statusCode": 400,
-            "body": json.dumps({"message": "No Address or unadr_bbrid specified"}),
-            "headers": headers,
-        }
-    if response is None:
-        return {
-            "statusCode": 500,
-            "headers": headers,
-        }
-    else:
-        return {
-            "statusCode": 200,
-            "headers": headers,
-            "body": response,
-        }
+
+@app.route("/")
+def base():
+    return """
+        <h1>No address provided</h1>
+        <p>Usage:
+            <ul>
+                <li>flood-risk/?address=Jarmers plads 1, 2100 København</li>
+                <li>flood-risk/?unadr_bbrid=<bbr_id></li>
+            </ul>
+        </p>
+    """
+
+
+@app.route("/flood-risk")
+def get_flood_risk_response():
+    if "address" not in request.args and "unadr_bbrid" not in request.args:
+        return "No address specified, see root url for usage", 400
+    try:
+        if "address" in request.args:
+            response = get_flood_risk(address=request.args.get("address"))
+        else:
+            response = get_flood_risk(bbr_id=request.args.get("unadr_bbrid"))
+    except Exception:
+        response = None
+    finally:
+        if response is None:
+            return app.response_class(
+                response=json.dumps({"msg": "error"}),
+                status=500,
+                mimetype="application/json",
+            )
+
+        return jsonify(response)

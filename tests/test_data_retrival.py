@@ -1,5 +1,5 @@
 import unittest
-from code.lib import (
+from src.lib import (
     address_to_house_data,
     bbr_id_to_house_data,
     bounding_box,

@@ -1,6 +1,6 @@
 import base64
 import unittest
-from code.lib import (
+from src.lib import (
     address_to_house_data,
     fastning_image_to_value,
     get_fastning_img,

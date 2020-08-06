@@ -1,6 +1,6 @@
 import base64
 import unittest
-from code.lib import (
+from src.lib import (
     IMAGE_SIZE,
     address_to_house_data,
     coordinates_to_holllowing_images,
