@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_SIZE: 800
+      GEO_KEY: ${{ secrets.GEO_KEY }}
+      KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
 
     steps:
       - uses: actions/checkout@v2.3.1
@@ -15,18 +17,14 @@ jobs:
       - name: Run tests
         run: |
           docker run \
-              -e KORTFORSYNINGEN=${{ secrets.KORTFORSYNINGEN }} \
-              -e GEO_KEY=${{ secrets.GEO_KEY }} \
-              -e IMAGE_SIZE=800 \
+              -e KORTFORSYNINGEN -e GEO_KEY -e IMAGE_SIZE \
                 flood_risk pipenv run python -m unittest
 
       - name: Creating coverage
         run: |
           docker run \
-              -e KORTFORSYNINGEN=${{ secrets.KORTFORSYNINGEN }} \
-              -e GEO_KEY=${{ secrets.GEO_KEY }} \
-              -e IMAGE_SIZE=800 \
-                flood_risk pipenv run coverage run --source=. -m unittest
+              -e KORTFORSYNINGEN -e GEO_KEY -e IMAGE_SIZE \
+              flood_risk pipenv run coverage run --source=. -m unittest
 
       #pipenv install --deploy
       - name: Uploading Coverage
