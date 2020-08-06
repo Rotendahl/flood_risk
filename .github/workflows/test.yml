@@ -13,21 +13,21 @@ jobs:
       - name: Build image
         run: docker build -t flood_risk .
       - name: Run tests
-        run: docker run \
-          -e KORTFORSYNINGEN=${{ secrets.KORTFORSYNINGEN }} \
-          -e GEO_KEY=${{ secrets.GEO_KEY }} \
-          -e IMAGE_SIZE=800 \
+        run: docker run
+          -e KORTFORSYNINGEN=${{ secrets.KORTFORSYNINGEN }}
+          -e GEO_KEY=${{ secrets.GEO_KEY }}
+          -e IMAGE_SIZE=800
           flood_risk pipenv run python -m unittest
       - name: Creating coverage
-        run: docker run \
-          -e KORTFORSYNINGEN=${{ secrets.KORTFORSYNINGEN }} \
-          -e GEO_KEY=${{ secrets.GEO_KEY }} \
-          -e IMAGE_SIZE=800 \
+        run: docker run
+          -e KORTFORSYNINGEN=${{ secrets.KORTFORSYNINGEN }}
+          -e GEO_KEY=${{ secrets.GEO_KEY }}
+          -e IMAGE_SIZE=800
           flood_risk pipenv run coverage run --source=. -m unittest
       #pipenv install --deploy
       - name: Uploading Coverage
-        run: docker run  \
-          -e COVERALLS_REPO_TOKEN=${{ secrets.COVERALLS_REPO_TOKEN }} \
+        run: docker run
+          -e COVERALLS_REPO_TOKEN=${{ secrets.COVERALLS_REPO_TOKEN }}
           flood_risk pipenv run coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
