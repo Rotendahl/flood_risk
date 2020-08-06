@@ -8,7 +8,7 @@ RUN pip install pipenv
 COPY ./Pipfile ./
 COPY ./Pipfile.lock ./
 
-RUN pipenv install
+RUN pipenv install --deploy
 
 ENV FLASK_APP=src/server.py
 
