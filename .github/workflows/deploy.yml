@@ -1,10 +1,10 @@
 name: Runs deployment steps and analyses code
-'on':
+"on":
   push:
     branches:
       - master
 jobs:
-  push_to_registry:
+  push_to_dockerhub:
     name: Build and Push Docker image to dockerhub
     runs-on: ubuntu-latest
     steps:
@@ -13,12 +13,13 @@ jobs:
       - name: Push to docker hub
         uses: docker/build-push-action@v1
         with:
-          username: '${{ secrets.docker_user }}'
-          password: '${{ secrets.docker_token }}'
+          username: "${{ secrets.docker_user }}"
+          password: "${{ secrets.docker_token }}"
           repository: rotendahl/flood_risk
           tag_with_sha: true
           tag_with_ref: true
 
+  push_to_github_packages:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
     steps:
