@@ -56,7 +56,7 @@ app = Flask(__name__)
 @app.route("/")
 def base():
     return """
-        <h1>No address provided</h1>
+        <h1>No address provided!</h1>
         <p>Usage:
             <ul>
                 <li>flood-risk/?address=Jarmers plads 1, 2100 København</li>
