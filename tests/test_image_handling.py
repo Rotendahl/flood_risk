@@ -1,5 +1,5 @@
 import unittest
-from code.lib import combine_images, greyscale_to_binary_image, isolate_building
+from src.lib import combine_images, greyscale_to_binary_image, isolate_building
 from os import path
 
 import numpy as np

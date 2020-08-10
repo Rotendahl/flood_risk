@@ -3,15 +3,14 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[dev-packages]
+
+
+[packages]
 black = "==19.10b0"
 coverage = "~=5.2.1"
 coveralls = "~=2.1.1"
 flake8 = "~=3.8.3"
 aiohttp = "*"
-matplotlib = "*"
-
-[packages]
 pyproj = "~=2.6.1"
 pillow = "~=7.2.0"
 pandas = "~=1.1.0"
@@ -19,6 +18,8 @@ requests = "~=2.24.0"
 tqdm = "~=4.48.1"
 sentry-sdk = "~=0.16.3"
 numpy = "~=1.19.1"
+waitress = "~=1.4.4"
+flask = "~=1.1.2"
 
 [requires]
 python_version = "3.8"

@@ -1,5 +1,5 @@
 import unittest
-from code.lib import address_to_house_data, get_rain_risk_response
+from src.lib import address_to_house_data, get_rain_risk_response
 
 
 class TestRainRisk(unittest.TestCase):
