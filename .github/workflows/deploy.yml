@@ -5,12 +5,12 @@ name: Runs deployment steps and analyses code
       - master
 jobs:
   push_to_registry:
-    name: Build and Push Docker image to GitHub Packages
+    name: Build and Push Docker image to dockerhub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Push to GitHub Packages
+      - name: Push to docker hub
         uses: docker/build-push-action@v1
         with:
           username: '${{ secrets.docker_user }}'
@@ -18,3 +18,18 @@ jobs:
           repository: rotendahl/flood_risk
           tag_with_sha: true
           tag_with_ref: true
+
+    name: Push Docker image to GitHub Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: rotendahl/flood_risk
+          tag_with_ref: true
+          tag_with_sha: true
