@@ -14,4 +14,6 @@ ENV FLASK_APP=src/server.py
 
 COPY ./ ./
 
+EXPOSE 8080
+
 CMD ["pipenv", "run", "waitress-serve", "src.server:app"]
