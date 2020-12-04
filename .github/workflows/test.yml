@@ -14,9 +14,9 @@ jobs:
         with:
           python-version: "3.9"
       - name: Install pipenv
-        uses: dschep/install-pipenv-action@v1
+        run: pip install pipenv
       - name: Install packages
-        run: pipenv install --deploy --dev
+        run: pipenv install --deploy --dev --system
       - name: Run tests
         run: pipenv run python -m unittest
         env:
