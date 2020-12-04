@@ -17,23 +17,23 @@ jobs:
       - name: Install packages
         run: pipenv install --deploy --dev --system
       - name: Run tests
-        run: pipenv run python -m unittest
+        run: python -m unittest
         env:
           KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
           GEO_KEY: ${{ secrets.GEO_KEY }}
 
       - name: Creating coverage
-        run: pipenv run coverage run --source=. -m unittest
+        run: coverage run --source=. -m unittest
         env:
           KORTFORSYNINGEN: ${{ secrets.KORTFORSYNINGEN }}
           GEO_KEY: ${{ secrets.GEO_KEY }}
 
       - name: Uploading Coverage
-        run: pipenv run coveralls
+        run: coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
       - name: Checking black
-        run: pipenv run black --check .
+        run: black --check .
       - name: Checking Flake8
-        run: pipenv run flake8 --max-complexity 8 .
+        run: flake8 --max-complexity 8 .
