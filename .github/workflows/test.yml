@@ -9,9 +9,10 @@ jobs:
       IMAGE_SIZE: 800
     steps:
       - uses: actions/checkout@v2.3.2
-      - uses: actions/setup-python@v2.1.2
+      - uses: actions/setup-python@v2
         with:
           python-version: "3.9"
+          architecture: "x86"
       - name: Install pipenv
         run: pip install pipenv
       - name: Install packages
