@@ -10,6 +10,9 @@ pillow = "*"
 pyproj = "*"
 sentry-sdk = "*"
 imagehash = "*"
+coveralls = "*"
+coverage = "*"
+flake8 = "*"
 
 [dev-packages]
 black = "==20.8b1"
